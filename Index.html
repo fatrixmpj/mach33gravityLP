@@ -1,89 +1,213 @@
-<!doctype html>
+<!DOCTYPE html>
 
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Gravity</title>
-  <meta name="description" content="Werenbach Mach 33 Gravity Uhr NFC Chip Landingpage">
-  <meta name="author" content="SitePoint">
+    <title>Gravity</title>
+    <meta
+      name="description"
+      content="Werenbach Mach 33 Gravity Uhr NFC Chip Landingpage"
+    />
+    <meta name="author" content="SitePoint" />
 
-  <meta property="og:title" content="A Basic HTML5 Template">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.sitepoint.com/a-basic-html5-template/">
-  <meta property="og:description" content="Werenbach Mach 33 Gravity Uhr NFC Chip Landingpage">
-  <meta property="og:image" content="image.png">
+    <meta property="og:title" content="A Basic HTML5 Template" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://www.sitepoint.com/a-basic-html5-template/"
+    />
+    <meta
+      property="og:description"
+      content="Werenbach Mach 33 Gravity Uhr NFC Chip Landingpage"
+    />
+    <meta property="og:image" content="image.png" />
 
-  <link rel="icon" href="/favicon.ico">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
-  <link rel="stylesheet" href="css/Custom.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/Custom.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+  </head>
 
-
-</head>
-
-<body class="body">
-
-  <header class="mainMenu">
-    <nav class="navbar navbar-expand-lg darkNav mainNav" id="mainNav">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">Gravity</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#section1">Live-Feed</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#section2">Facts</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#section3">Disabled</a>
-            </li>
-          </ul>
-          <button onclick="toggleWhiteMode()">
-            <i class="fa-solid fa-sun" id="sun"></i>
-            <i class="fa-solid fa-moon hidden" id="moon"></i>
+  <body class="body">
+    <header class="mainMenu">
+      <nav class="navbar navbar-expand-lg darkNav mainNav" id="mainNav">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Gravity</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
           </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="#section2">Facts</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#section3">Crew</a>
+              </li>
+            </ul>
+            <a
+              onclick="toggleWhiteMode()"
+              class="btn btn-outline-light"
+              id="btn"
+            >
+              <i class="fa-solid fa-sun" id="sun"></i>
+              <i class="fa-solid fa-moon hidden" id="moon"></i>
+            </a>
+          </div>
         </div>
-      </div>
-    </nav>
-  </header>
+      </nav>
+    </header>
 
-  <div class="main">
-    <section class="section liveFeed">
-      <div class="section1" id="section1">
-        <h2>Live Feed</h2>
+    <div class="main">
+      <section class="section liveFeed" id="section1">
+        <div class="section1">
+          <h2>ISS Live Feed</h2>
 
-        <iframe class="issFeed" src="https://www.youtube-nocookie.com/embed/86YLFOog4GM?controls=0&autoplay=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-    </section>
-  
-    <section class="section facts">
-      <div class="section2" id="section2">
-        <h2>Facts</h2>
-        Rutrum erat congue sit condimentum cursus nec suspendisse nisl nulla portaest tortor euismod ipsum ipsum fusce quis lorem facilisis diam accumsan arcu cursus cursus fusce.
-  
-  Lorem erat eros maecenas phasellus erat ex elit maximus et quam amet ex sollicitudin maecenas elementum quisque massa sit commodo sollicitudin felis consectetur a suspendisse.
-      </div>
-    </section>
-  
-    <section class="section disabled">
-      <div class="section3" id="section3">
-        <h2>Disabled</h2>
-        Rutrum erat congue sit condimentum cursus nec suspendisse nisl nulla portaest tortor euismod ipsum ipsum fusce quis lorem facilisis diam accumsan arcu cursus cursus fusce.
-  
-  Lorem erat eros maecenas phasellus erat ex elit maximus et quam amet ex sollicitudin maecenas elementum quisque massa sit commodo sollicitudin felis consectetur a suspendisse.
-      </div>
-    </section>
-  </div>
+          <iframe
+            class="issFeed"
+            src="https://www.youtube-nocookie.com/embed/86YLFOog4GM?controls=0&autoplay=1&mute=1"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </section>
 
-  <script src="https://kit.fontawesome.com/a7b71de8af.js" crossorigin="anonymous"></script>
-  <script src="js/Custom.js"></script>
-</body>
+      <section class="section facts" id="section2">
+        <div class="section2">
+          <h2>Facts</h2>
+          <div class="row">
+            <div class="col-6">
+              <ul>
+                <li>Mission: Soyuz MS-09</li>
+                <li>Operator: Roscosmos</li>
+                <li>Duration: 196d 17h 50m</li>
+                <li>Mission Date: 6 June 2018 - 20 December 2018</li>
+                <li>Spacecraft: Soyuz-MS</li>
+                <li>Rocket: Soyuz-FG</li>
+              </ul>
+            </div>
+
+            <div class="col-6"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section crew" id="section3">
+        <div class="section3">
+          <div class="row">
+            <div class="col-12">
+              <h2>Crew</h2>
+
+              <div class="row">
+                <div class="col-4">
+                  <div class="crewCard">
+                    <p class="crewName crewInside">Sergey Prokopyev</p>
+                    <img
+                      src="https://picsum.photos/200/300"
+                      class="crewImg crewInside"
+                    />
+                    <p class="crewMisc crewInside">Commander, RSA</p>
+                  </div>
+                </div>
+
+                <div class="col-4">
+                  <div class="crewCard">
+                    <p class="crewName crewInside">Alexander Gerst</p>
+                    <img
+                      src="https://picsum.photos/200/300"
+                      class="crewImg crewInside"
+                    />
+                    <p class="crewMisc crewInside">Flight Engineer 1, ESA</p>
+                  </div>
+                </div>
+
+                <div class="col-4">
+                  <div class="crewCard">
+                    <p class="crewName crewInside">
+                      Serena M. Auñón-Chancellor
+                    </p>
+                    <img
+                      src="https://picsum.photos/200/300"
+                      class="crewImg crewInside"
+                    />
+                    <p class="crewMisc crewInside">Flight Engineer 2, NASA</p>
+                  </div>
+                </div>
+              </div>
+
+              <h2 class="crewTitle">Backup Crew</h2>
+
+              <div class="row">
+                <div class="col-4">
+                  <div class="crewCard">
+                    <p class="crewName crewInside">Oleg Kononenko</p>
+                    <img
+                      src="https://picsum.photos/200/300"
+                      class="crewImg crewInside"
+                    />
+                    <p class="crewMisc crewInside">Commander, RSA</p>
+                  </div>
+                </div>
+
+                <div class="col-4">
+                  <div class="crewCard">
+                    <p class="crewName crewInside">David Saint-Jacques</p>
+                    <img
+                      src="https://picsum.photos/200/300"
+                      class="crewImg crewInside"
+                    />
+                    <p class="crewMisc crewInside">Flight Engineer 1, CSA</p>
+                  </div>
+                </div>
+
+                <div class="col-4">
+                  <div class="crewCard">
+                    <p class="crewName crewInside">Anne C. McClain</p>
+                    <img
+                      src="https://picsum.photos/200/300"
+                      class="crewImg crewInside"
+                    />
+                    <p class="crewMisc crewInside">Flight Engineer 2, NASA</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      <div class="footer">
+        <a href="" class="footerLink">Impressum</a>
+        <a href="" class="footerLink">Datenschutz</a>
+        <p>&copy; Fatrixmpj 2022</p>
+      </div>
+    </footer>
+
+    <script
+      src="https://kit.fontawesome.com/a7b71de8af.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/Custom.js"></script>
+  </body>
 </html>

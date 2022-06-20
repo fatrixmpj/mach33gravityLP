@@ -1,44 +1,91 @@
 body {
-    background-color: #121212 !important;
-    color: #fff !important;
+  background-color: #121212 !important;
+  color: #fff !important;
 }
 
 .whiteMode {
-    background-color: #fff !important;
-    color: #000 !important;
+  background-color: #fff !important;
+  color: #000 !important;
 }
 
 .section {
-    height: 100vh;
+  height: 100vh;
+  width: 95vw;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .mainMenu {
-    position: fixed;
-    width: 100vw;
+  position: fixed;
+  width: 100vw;
 }
 
 .main {
-    padding-top: 8vh;
+  padding-top: 7vh;
 }
 
 .issFeed {
-    width: 95vw;
-    height: 88vh;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.section1 {
-    width: 95vw;
-    margin-left: auto;
-    margin-right: auto;
+  width: 95vw;
+  height: 88vh;
 }
 
 .hidden {
-    display: none !important;
+  display: none !important;
 }
 
 .darkNav {
-	background-color: #4d4d4d !important;
-	box-shadow: 0 2px 10px 10px #262626;
+  background-color: #4d4d4d !important;
+  box-shadow: 0 2px 10px 10px #262626;
+}
+
+.facts,
+.crew {
+  padding-top: 8vh;
+}
+
+.crewCard {
+  border: 1px solid gray;
+  width: 15vw;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: gray;
+  box-shadow: 5px 5px 10px 10px #262626;
+}
+
+.crewInside {
+  width: 14.9vw;
+  text-align: center;
+}
+
+.crewName {
+  margin-top: 5px;
+  margin-bottom: 0;
+  font-weight: 700;
+}
+
+.crewTitle {
+  margin-top: 10vh;
+}
+
+footer {
+  height: 5vh;
+  background-color: lightgray;
+  position: relative;
+  bottom: -35vh;
+}
+
+footer p {
+  width: 7vw;
+  padding-top: 10px;
+  right: 5px;
+  position: absolute;
+  display: inline-block;
+}
+
+.footerLink {
+  display: inline-block;
+  width: 5vw;
+  padding-top: 10px;
+  left: 5px;
+  position: relative;
 }
