@@ -53,121 +53,131 @@
       </nav>
     </header>
 
-    <div class="description blue">
-      <div><h1>Slide-in panels with more animation!</h1>
-        <p>A simple animation linked to a ScrollTrigger with <code>scrub: true</code> creates a nifty effect.</p>
-        <div class="scroll-down">Scroll down<div class="arrow"></div></div>
+    <div class="bodyContainer">
+      <div class="backgroundDiv">
+        <video autoplay muted loop id="myVideo">
+          <source src="Resources\Videos\EarthRotationLoop.mp4" type="video/mp4">
+        </video>
       </div>
-    </div>
 
-    <div class="main">
-      <section class="section liveFeed" id="section1">
-          <h2>ISS Live Feed</h2>
-
-          <iframe
-            class="issFeed"
-            src="https://www.youtube-nocookie.com/embed/86YLFOog4GM?controls=0&autoplay=1&mute=1"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
-      </section>
-
-      <section class="section facts" id="section2">
-          <h2>Facts</h2>
-          <div class="row">
-            <div class="col-6">
-              <div class="imgContainer">
-                <img src="Resources\Images\Soyuz MS-09.jpg" class="image imageMission" />
-                <img src="Resources\Images\Soyuz-MS-09-crew.png" class="image imageCrew" />
+      <div class="description blue">
+        <div>
+          <h6>Mach 33</h6>
+          <h1>Gravity</h1>
+          <p>Watch the Earth from space and learn about the mission of the rocket you own a piece of</p>
+          <div class="scroll-down">Scroll down<div class="arrow"><i class="fa-solid fa-arrow-down"></i></div></div>
+        </div>
+      </div>
+  
+      <div class="main">
+        <section class="section section1 liveFeed" id="section1">
+            <h2>ISS Live Feed</h2>
+  
+            <iframe
+              class="issFeed"
+              src="https://www.youtube-nocookie.com/embed/86YLFOog4GM?controls=0&autoplay=1&mute=1"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+        </section>
+  
+        <section class="section section2 facts" id="section2">
+            <h2>Facts</h2>
+            <div class="row">
+              <div class="col-6">
+                <div class="imgContainer">
+                  <img src="Resources\Images\Soyuz MS-09.jpg" class="image imageMission" />
+                  <img src="Resources\Images\Soyuz-MS-09-crew.png" class="image imageCrew" />
+                </div>
+              </div>
+  
+              <div class="col-6">
+                <ul>
+                  <li>Mission: Soyuz MS-09</li>
+                  <li>Operator: Roscosmos</li>
+                  <li>Duration: 196d 17h 50m</li>
+                  <li>Mission Date: 6 June 2018 - 20 December 2018</li>
+                  <li>Spacecraft: Soyuz-MS</li>
+                  <li>Rocket: Soyuz-FG</li>
+                </ul>
               </div>
             </div>
-
-            <div class="col-6">
-              <ul>
-                <li>Mission: Soyuz MS-09</li>
-                <li>Operator: Roscosmos</li>
-                <li>Duration: 196d 17h 50m</li>
-                <li>Mission Date: 6 June 2018 - 20 December 2018</li>
-                <li>Spacecraft: Soyuz-MS</li>
-                <li>Rocket: Soyuz-FG</li>
-              </ul>
-            </div>
-          </div>
-      </section>
-
-      <section class="section crew" id="section3">
-          <div class="row">
-            <div class="col-12">
-              <h2>Crew</h2>
-
-              <!-- Tab links -->
-              <div class="tab">
-                <button class="tablinks" onclick="openCity(event, 'Main')" id="defaultOpen">Main</button>
-                <button class="tablinks" onclick="openCity(event, 'Backup')">Backup</button>
-              </div>
-
-              <!-- Tab content 1 -->
-              <div id="Main" class="tabcontent">
-                <div class="row">
-                  <div class="col-4">
-                    <div class="crewCard">
-                      <p class="crewName crewInside">Sergey Prokopyev</p>
-                      <img src="https://picsum.photos/200/300" class="crewImg crewInside" />
-                      <p class="crewMisc crewInside">Commander, RSA</p>
+        </section>
+  
+        <section class="section section3 crew" id="section3">
+            <div class="row">
+              <div class="col-12">
+                <h2>Crew</h2>
+  
+                <!-- Tab links -->
+                <div class="tab">
+                  <button class="tablinks" onclick="openCity(event, 'Main')" id="defaultOpen">Main</button>
+                  <button class="tablinks" onclick="openCity(event, 'Backup')">Backup</button>
+                </div>
+  
+                <!-- Tab content 1 -->
+                <div id="Main" class="tabcontent">
+                  <div class="row">
+                    <div class="col-4">
+                      <div class="crewCard">
+                        <p class="crewName crewInside">Sergey Prokopyev</p>
+                        <img src="https://picsum.photos/200/300" class="crewImg crewInside" />
+                        <p class="crewMisc crewInside">Commander, RSA</p>
+                      </div>
+                    </div>
+  
+                    <div class="col-4">
+                      <div class="crewCard">
+                        <p class="crewName crewInside">Alexander Gerst</p>
+                        <img src="https://picsum.photos/200/300" class="crewImg crewInside" />
+                        <p class="crewMisc crewInside">Flight Engineer 1, ESA</p>
+                      </div>
+                    </div>
+  
+                    <div class="col-4">
+                      <div class="crewCard">
+                        <p class="crewName crewInside">Serena M. Auñón-Chancellor</p>
+                        <img src="https://picsum.photos/200/300" class="crewImg crewInside" />
+                        <p class="crewMisc crewInside">Flight Engineer 2, NASA</p>
+                      </div>
                     </div>
                   </div>
-
-                  <div class="col-4">
-                    <div class="crewCard">
-                      <p class="crewName crewInside">Alexander Gerst</p>
-                      <img src="https://picsum.photos/200/300" class="crewImg crewInside" />
-                      <p class="crewMisc crewInside">Flight Engineer 1, ESA</p>
+                </div>
+  
+                <!-- Tab content 2 -->
+                <div id="Backup" class="tabcontent">
+                  <div class="row">
+                    <div class="col-4">
+                      <div class="crewCard">
+                        <p class="crewName crewInside">Oleg Kononenko</p>
+                        <img src="https://picsum.photos/200/300" class="crewImg crewInside" />
+                        <p class="crewMisc crewInside">Commander, RSA</p>
+                      </div>
                     </div>
-                  </div>
-
-                  <div class="col-4">
-                    <div class="crewCard">
-                      <p class="crewName crewInside">Serena M. Auñón-Chancellor</p>
-                      <img src="https://picsum.photos/200/300" class="crewImg crewInside" />
-                      <p class="crewMisc crewInside">Flight Engineer 2, NASA</p>
+  
+                    <div class="col-4">
+                      <div class="crewCard">
+                        <p class="crewName crewInside">David Saint-Jacques</p>
+                        <img src="https://picsum.photos/200/300" class="crewImg crewInside" />
+                        <p class="crewMisc crewInside">Flight Engineer 1, CSA</p>
+                      </div>
+                    </div>
+  
+                    <div class="col-4">
+                      <div class="crewCard">
+                        <p class="crewName crewInside">Anne C. McClain</p>
+                        <img src="https://picsum.photos/200/300" class="crewImg crewInside" />
+                        <p class="crewMisc crewInside">Flight Engineer 2, NASA</p>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-
-              <!-- Tab content 2 -->
-              <div id="Backup" class="tabcontent">
-                <div class="row">
-                  <div class="col-4">
-                    <div class="crewCard">
-                      <p class="crewName crewInside">Oleg Kononenko</p>
-                      <img src="https://picsum.photos/200/300" class="crewImg crewInside" />
-                      <p class="crewMisc crewInside">Commander, RSA</p>
-                    </div>
-                  </div>
-
-                  <div class="col-4">
-                    <div class="crewCard">
-                      <p class="crewName crewInside">David Saint-Jacques</p>
-                      <img src="https://picsum.photos/200/300" class="crewImg crewInside" />
-                      <p class="crewMisc crewInside">Flight Engineer 1, CSA</p>
-                    </div>
-                  </div>
-
-                  <div class="col-4">
-                    <div class="crewCard">
-                      <p class="crewName crewInside">Anne C. McClain</p>
-                      <img src="https://picsum.photos/200/300" class="crewImg crewInside" />
-                      <p class="crewMisc crewInside">Flight Engineer 2, NASA</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
-          </div>
-      </section>
+        </section>
+      </div>
     </div>
 
     <footer>

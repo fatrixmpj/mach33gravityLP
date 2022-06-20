@@ -65,32 +65,69 @@ function openCity(evt, cityName) {
 // Get the element with id="defaultOpen" and click on it
 document.getElementById("defaultOpen").click();
 
+// *******************
+// * GSAP ANIMATIONS *
+// *******************
 
-// GSAP ANIMATIONS
-gsap.defaults({ease: "none", duration: 2});
+// ScrollTrigger
+gsap.defaults({ ease: "none", duration: 1 });
 
 let scrollTl = gsap.timeline();
 
-scrollTl.to(".section1", {
-    // xPercent: -100,
-    opacity: 0
-}).to(".section2", {
-    // xPercent: -100,
-    opacity: 0
-}).to(".section3", {
-    // xPercent: -100,
-    opacity: 0
-});
+scrollTl
+  .to(".scroll-down", {
+    // opacity: 0
+    yPercent: -1500,
+  })
+  .from(
+    ".section1",
+    {
+      opacity: 0,
+    },
+    "<"
+  )
+
+  .from(".section1", { duration: 2 })
+
+  .from(".section1", {
+    opacity: 1,
+  })
+  .from(".section2", {
+    opacity: 0,
+  })
+
+  .from(".section1", { duration: 2 })
+
+  .from(".section2", {
+    opacity: 1,
+  })
+  .from(".section3", {
+    opacity: 0,
+  })
+
+  .from(".section1", { duration: 2 });
 
 ScrollTrigger.create({
-    animation: scrollTl,
-    trigger: ".main",
-    start: "top top",
-    end: "+=4000", 
-    scrub: true,
-    pin: true,
-    anticipatePin: 1,
-    markers: true
-  });
+  animation: scrollTl,
+  trigger: ".main",
+  start: "top top",
+  end: "+=10000",
+  scrub: true,
+  pin: ".main",
+  anticipatePin: 1,
+  markers: true,
+});
+
+
+// Arrow Bounce
+let arrowTl = gsap.timeline({
+    repeat: -1
+});
+
+arrowTl.to(".arrow", {
+    yPercent: -10
+}).to(".arrow", {
+    yPercent: 10
+}).repeat()
 
 // GSDevTools.create();to
