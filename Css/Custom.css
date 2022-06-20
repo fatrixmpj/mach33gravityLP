@@ -1,0 +1,44 @@
+body {
+    background-color: #121212 !important;
+    color: #fff !important;
+}
+
+.whiteMode {
+    background-color: #fff !important;
+    color: #000 !important;
+}
+
+.section {
+    height: 100vh;
+}
+
+.mainMenu {
+    position: fixed;
+    width: 100vw;
+}
+
+.main {
+    padding-top: 8vh;
+}
+
+.issFeed {
+    width: 95vw;
+    height: 88vh;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section1 {
+    width: 95vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.darkNav {
+	background-color: #4d4d4d !important;
+	box-shadow: 0 2px 10px 10px #262626;
+}
