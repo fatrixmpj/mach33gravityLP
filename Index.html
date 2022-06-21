@@ -28,7 +28,7 @@
       <nav class="navbar navbar-expand-lg darkNav mainNav" id="mainNav">
         <div class="container-fluid">
           <!-- TODO: Change href back to "/" -->
-          <a class="navbar-brand navBrandHover" href="/mach33gravityLP">Gravity</a>
+          <a class="navbar-brand navBrandHoverDark" id="navBrand" href="/mach33gravityLP">Gravity</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -44,7 +44,7 @@
                 <a class="nav-link" href="#section3">Crew</a>
               </li>
             </ul>
-            <a onclick="toggleWhiteMode()" class="btn btn-outline-light" id="btn">
+            <a onclick="toggleWhiteMode()" class="btn btn-outline-dark" id="btn">
               <i class="fa-solid fa-sun" id="sun"></i>
               <i class="fa-solid fa-moon hidden" id="moon"></i>
             </a>
@@ -124,25 +124,25 @@
                 <div id="Main" class="tabcontent">
                   <div class="row">
                     <div class="col-4">
-                      <div class="crewCard">
-                        <p class="crewName crewInside">Sergey Prokopyev</p>
-                        <img src="https://picsum.photos/200/300" class="crewImg crewInside" />
+                      <div id="crewCard" class="crewCard darkCrew">
+                        <a href="https://en.wikipedia.org/wiki/Sergey_Prokopyev_(cosmonaut)" target="_blank" class="crewName crewInside">Sergey Prokopyev</a>
+                        <img src="Resources\Images\Sergey_Prokopyev_-_NASA_portrait.jpg" class="crewImg crewInside" />
                         <p class="crewMisc crewInside">Commander, RSA</p>
                       </div>
                     </div>
   
                     <div class="col-4">
-                      <div class="crewCard">
-                        <p class="crewName crewInside">Alexander Gerst</p>
-                        <img src="https://picsum.photos/200/300" class="crewImg crewInside" />
+                      <div id="crewCard" class="crewCard darkCrew">
+                        <a href="https://en.wikipedia.org/wiki/Alexander_Gerst" target="_blank" class="crewName crewInside">Alexander Gerst</a>
+                        <img src="Resources\Images\Alexander_Gerst,_official_portrait_in_2017.jpg" class="crewImg crewInside" />
                         <p class="crewMisc crewInside">Flight Engineer 1, ESA</p>
                       </div>
                     </div>
   
                     <div class="col-4">
-                      <div class="crewCard">
-                        <p class="crewName crewInside">Serena M. Auñón-Chancellor</p>
-                        <img src="https://picsum.photos/200/300" class="crewImg crewInside" />
+                      <div id="crewCard" class="crewCard darkCrew">
+                        <a href="https://en.wikipedia.org/wiki/Serena_Au%C3%B1%C3%B3n-Chancellor" target="_blank" class="crewName crewInside">Serena M. Auñón-Chancellor</a>
+                        <img src="Resources\Images\Serena_M._Aunon,_NASA_astronaut_candidate.jpg" class="crewImg crewInside" />
                         <p class="crewMisc crewInside">Flight Engineer 2, NASA</p>
                       </div>
                     </div>
@@ -153,25 +153,25 @@
                 <div id="Backup" class="tabcontent">
                   <div class="row">
                     <div class="col-4">
-                      <div class="crewCard">
-                        <p class="crewName crewInside">Oleg Kononenko</p>
-                        <img src="https://picsum.photos/200/300" class="crewImg crewInside" />
+                      <div id="crewCard" class="crewCard darkCrew">
+                        <a href="https://en.wikipedia.org/wiki/Oleg_Kononenko" target="_blank" class="crewName crewInside">Oleg D. Kononenko</a>
+                        <img src="Resources\Images\kononenko_oleg_d.jpg" class="crewImg crewInside" />
                         <p class="crewMisc crewInside">Commander, RSA</p>
                       </div>
                     </div>
   
                     <div class="col-4">
-                      <div class="crewCard">
-                        <p class="crewName crewInside">David Saint-Jacques</p>
-                        <img src="https://picsum.photos/200/300" class="crewImg crewInside" />
+                      <div id="crewCard" class="crewCard darkCrew">
+                        <a href="https://en.wikipedia.org/wiki/David_Saint-Jacques" target="_blank" class="crewName crewInside">David Saint-Jacques</a>
+                        <img src="Resources\Images\David_Saint-Jacques_official_portrait.jpg" class="crewImg crewInside" />
                         <p class="crewMisc crewInside">Flight Engineer 1, CSA</p>
                       </div>
                     </div>
   
                     <div class="col-4">
-                      <div class="crewCard">
-                        <p class="crewName crewInside">Anne C. McClain</p>
-                        <img src="https://picsum.photos/200/300" class="crewImg crewInside" />
+                      <div id="crewCard" class="crewCard darkCrew">
+                        <a href="https://en.wikipedia.org/wiki/Anne_McClain" target="_blank" class="crewName crewInside">Anne C. McClain</a>
+                        <img src="Resources\Images\Anne_C._McClain_portrait.jpg" class="crewImg crewInside" />
                         <p class="crewMisc crewInside">Flight Engineer 2, NASA</p>
                       </div>
                     </div>
@@ -183,10 +183,12 @@
       </div>
     </div>
 
-    <footer>
-      <div class="footer">
-        <a href="Impressum.html" class="footerLink">Impressum</a>
-        <a href="Datenschutz.html" class="footerLink">Datenschutz</a>
+    <footer class="footer-dark" id="footer">
+      <div>
+        <p class="disclaimer">This Site isn't affiliated with <a href="https://www.werenbach.ch" target="_blank" class="CompanyLink">Werenbach</a> in any way. 
+          <a href="https://www.werenbach.ch/de/shop/mach33/gravity/" target="_blank" class="watchLink">To the watch.</a></p>
+        <!-- <a href="Impressum.html" class="footerLink">Impressum</a>
+        <a href="Datenschutz.html" class="footerLink">Datenschutz</a> -->
         <p>&copy; Fatrixmpj 2022</p>
       </div>
     </footer>

@@ -5,7 +5,14 @@ body {
 
 .whiteMode {
   background-color: #fff !important;
-  color: #000 !important;
+  color: #d87427 !important;
+}
+
+.bodyContainer a {
+  display: inline-block;
+  color: #d87427;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .section {
@@ -23,7 +30,7 @@ body {
   width: 50vw;
   margin-left: auto;
   margin-right: auto;
-  z-index: 1;
+  z-index: 11;
   position: relative;
 }
 
@@ -75,6 +82,18 @@ body {
   color: #278bd8;
 }
 
+.lightNav {
+  background-color: #d87427 !important;
+}
+
+.lightNav a {
+  color: #000;
+}
+
+.lightNav a:hover {
+  color: #278bd8;
+}
+
 .facts,
 .crew,
 .liveFeed {
@@ -82,11 +101,22 @@ body {
 }
 
 .crewCard {
-  border: 1px solid #1a1a1a;
   width: 15vw;
   margin-left: auto;
   margin-right: auto;
   margin-top: 5%;
+  height: 50.5vh;
+  overflow: hidden;
+}
+
+.lightCrew {
+  border: 1px solid #af3939;
+  background-color: #af3939;
+  box-shadow: 5px 8px 8px #262626;
+}
+
+.darkCrew {
+  border: 1px solid #1a1a1a;
   background-color: #1a1a1a;
   box-shadow: 5px 8px 8px #262626;
 }
@@ -108,10 +138,28 @@ body {
 
 footer {
   height: 5vh;
-  background-color: #4d4d4d;
   position: fixed;
   bottom: 0;
   width: 100vw;
+  z-index: 11;
+}
+
+.footer-dark {
+  background-color: #4d4d4d;
+}
+
+.footer-dark a,
+.footer-dark p {
+  color: #d87427;
+}
+
+.footer-light {
+  background-color: #d87427;
+}
+
+.footer-light a,
+.footer-light p {
+  color: #000;
 }
 
 footer p {
@@ -122,18 +170,39 @@ footer p {
   display: inline-block;
 }
 
+.disclaimer {
+	display: inline-block;
+	width: 40vw;
+	padding-top: 10px;
+	left: 10px;
+	position: relative;
+	text-decoration: none;
+}
+
 .footerLink {
   display: inline-block;
   width: 5vw;
   padding-top: 10px;
   left: 10px;
   position: relative;
-  color: #d87427;
   text-decoration: none;
 }
 
-.footerLink:hover {
+.footerLink:hover,
+.watchLink:hover,
+.CompanyLink:hover {
   color: #278bd8;
+}
+
+.watchLink {
+  margin-left: 1vw;
+}
+
+.CompanyLink,
+.watchLink {
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 600;
 }
 
 main {
@@ -144,6 +213,7 @@ main {
   width: 48vw;
 }
 
+/* Group pic crew */
 .imageCrew {
   margin-top: -44%;
   margin-left: 36%;
@@ -151,64 +221,77 @@ main {
   position: relative;
 }
 
+/* Portraits of crew */
+.crewImg {
+  height: 43vh;
+  width: auto;
+}
+
 .btn-outline-light {
-  border: 1px solid #d87427 !important;
-}
-
-.btn-outline-light:hover {
-  border: 1px solid #d87427 !important;
-  background-color: #d87427 !important;
-}
-
-.btn-outline-dark {
   border: 1px solid #278bd8 !important;
 }
 
-.btn-outline-dark:hover {
+.btn-outline-light:hover {
   border: 1px solid #278bd8 !important;
   background-color: #278bd8 !important;
 }
 
-.navBrandHover:hover {
+.btn-outline-dark {
+  border: 1px solid #d87427 !important;
+}
+
+.btn-outline-dark:hover {
+  border: 1px solid #d87427 !important;
+  background-color: #d87427 !important;
+}
+
+.navBrandHoverDark:hover {
   color: #d87427 !important;
+}
+
+.navBrandHover:hover {
+  color: #000 !important;
 }
 
 /* Style the tab */
 .tab {
   overflow: hidden;
-  border: 1px solid #ccc;
-  background-color: #f1f1f1;
+  border: 1px solid #0d0d0d;
+  border-bottom: none;
+  background-color: #0d0d0d;
 }
 
 /* Style the buttons that are used to open the tab content */
 .tab button {
-  background-color: inherit;
+  background-color: #1A1A1A;
   float: left;
   border: none;
   outline: none;
   cursor: pointer;
   padding: 14px 16px;
   transition: 0.3s;
+  color: #d87427;
 }
 
 /* Change background color of buttons on hover */
 .tab button:hover {
-  background-color: #ddd;
+  background-color: #404040;
 }
 
 /* Create an active/current tablink class */
 .tab button.active {
-  background-color: #ccc;
+  background-color: #262626;
 }
 
 /* Style the tab content */
 .tabcontent {
   display: none;
   padding: 6px 12px;
-  border: 1px solid #ccc;
+  border: 1px solid #1A1A1A;
   border-top: none;
   height: 90%;
   animation: fadeEffect 1s; /* Fading effect takes 1 second */
+  background-color: #1A1A1A;
 }
 
 /* Go from zero to full opacity */
@@ -259,4 +342,11 @@ main {
 	opacity: 0.5;
 	left: 51.8vw;
 	rotate: -75deg;
+}
+
+.backgroundDiv {
+  z-index: 10;
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }

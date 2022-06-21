@@ -12,13 +12,27 @@ function toggleWhiteMode() {
 
     // NAV COLOR
     var whiteNav = document.getElementById("mainNav");
-    whiteNav.classList.add("bg-light");
+    whiteNav.classList.add("lightNav");
     whiteNav.classList.remove("darkNav");
+    // NAVbrand COLOR
+    var whiteNav = document.getElementById("navBrand");
+    whiteNav.classList.add("navBrandHover");
+    whiteNav.classList.remove("navBrandHoverDark");
 
     // BUTTON COLOR
     var whiteBtn = document.getElementById("btn");
-    whiteBtn.classList.add("btn-outline-dark");
-    whiteBtn.classList.remove("btn-outline-light");
+    whiteBtn.classList.add("btn-outline-light");
+    whiteBtn.classList.remove("btn-outline-dark");
+
+    // Footer COLOR
+    var whiteFooter = document.getElementById("footer");
+    whiteFooter.classList.add("footer-light");
+    whiteFooter.classList.remove("footer-dark");
+
+    // CrewCard COLOR
+    var whiteCrewCard = document.getElementsByClassName("crewCard");
+    whiteCrewCard.classList.add("lightCrew");
+    whiteCrewCard.classList.remove("darkCrew");
   } else {
     // ICONS
     var modeSun = document.getElementById("sun");
@@ -28,14 +42,28 @@ function toggleWhiteMode() {
     modeMoon.classList.add("hidden");
 
     // NAV COLOR
-    var whiteNav = document.getElementById("mainNav");
-    whiteNav.classList.add("darkNav");
-    whiteNav.classList.remove("bg-light");
+    var darkNav = document.getElementById("mainNav");
+    darkNav.classList.add("darkNav");
+    darkNav.classList.remove("lightNav");
+    // NAVbrand COLOR
+    var darkNav = document.getElementById("navBrand");
+    darkNav.classList.add("navBrandHoverDark");
+    darkNav.classList.remove("navBrandHover");
 
     // BUTTON COLOR
-    var whiteBtn = document.getElementById("btn");
-    whiteBtn.classList.add("btn-outline-light");
-    whiteBtn.classList.remove("btn-outline-dark");
+    var darkBtn = document.getElementById("btn");
+    darkBtn.classList.add("btn-outline-dark");
+    darkBtn.classList.remove("btn-outline-light");
+
+    // Footer COLOR
+    var darkFooter = document.getElementById("footer");
+    darkFooter.classList.add("footer-dark");
+    darkFooter.classList.remove("footer-light");
+
+    // CrewCard COLOR
+    var darkCrewCard = document.getElementsByClassName("crewCard");
+    darkCrewCard.classList.add("darkCrew");
+    darkCrewCard.classList.remove("lightCrew");
   }
 }
 
@@ -79,6 +107,11 @@ scrollTl
     // opacity: 0
     yPercent: -1500,
   })
+  .to(".backgroundDiv", {
+    // opacity: 0
+    yPercent: -100,
+  }, "<")
+
   .from(
     ".section1",
     {
@@ -86,7 +119,7 @@ scrollTl
     },
     "<"
   )
-
+  
   .from(".section1", { duration: 2 })
 
   .from(".section1", {
@@ -115,7 +148,7 @@ ScrollTrigger.create({
   scrub: true,
   pin: ".main",
   anticipatePin: 1,
-  markers: true,
+  // markers: true,
 });
 
 
