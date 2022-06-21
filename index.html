@@ -35,13 +35,16 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link" href="#section1">Live Feed</a>
+                <a class="nav-link">Live Feed</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#section2">Facts</a>
+                <a class="nav-link">Watch Facts</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#section3">Crew</a>
+                <a class="nav-link">Mission Facts</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link">Crew</a>
               </li>
             </ul>
             <a onclick="toggleWhiteMode()" class="btn btn-outline-dark" id="btn">
@@ -56,7 +59,7 @@
     <div class="bodyContainer">
       <div class="backgroundDiv">
         <video autoplay muted loop id="myVideo">
-          <source src="Resources\Videos\EarthRotationLoop.mp4" type="video/mp4">
+          <source src="Resources\Videos\EarthRotationLoop.mp4" type="video/mp4" />
         </video>
         <label class="vidLabel">&copy; Mars 2019</label>
       </div>
@@ -66,127 +69,174 @@
           <h6>Mach 33</h6>
           <h1>Gravity</h1>
           <p>Watch the Earth from space and learn about the mission of the rocket you own a piece of</p>
-          <div class="scroll-down">Scroll down<div class="arrow"><i class="fa-solid fa-arrow-down"></i></div></div>
+          <div class="scroll-down">
+            Scroll down
+            <div class="arrow"><i class="fa-solid fa-arrow-down"></i></div>
+          </div>
         </div>
       </div>
-  
+
       <div class="main">
         <section class="section section1 liveFeed" id="section1">
-            <h2>ISS Live Feed</h2>
-  
-            <iframe
-              class="issFeed"
-              src="https://www.youtube-nocookie.com/embed/86YLFOog4GM?controls=0&autoplay=1&mute=1"
-              title="YouTube video player"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            ></iframe>
+          <h2>ISS Live Feed</h2>
+
+          <iframe
+            class="issFeed"
+            src="https://www.youtube-nocookie.com/embed/86YLFOog4GM?controls=0&autoplay=1&mute=1"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
         </section>
-  
-        <section class="section section2 facts" id="section2">
-            <h2>Facts</h2>
-            <div class="row">
-              <div class="col-6">
-                <div class="imgContainer">
-                  <img src="Resources\Images\Soyuz MS-09.jpg" class="image imageMission" />
-                  <label class="missionLabel">&copy; NASA 2018</label>
-                  <img src="Resources\Images\Soyuz-MS-09-crew.png" class="image imageCrew" />
-                  <label class="crewLabel">&copy; Spacefacts 2018</label>
-                </div>
-              </div>
-  
-              <div class="col-6">
-                <ul>
-                  <li>Mission: Soyuz MS-09</li>
-                  <li>Operator: Roscosmos</li>
-                  <li>Duration: 196d 17h 50m</li>
-                  <li>Mission Date: 6 June 2018 - 20 December 2018</li>
-                  <li>Spacecraft: Soyuz-MS</li>
-                  <li>Rocket: Soyuz-FG</li>
-                </ul>
+
+        <section class="section section2 watchFacts" id="section2">
+          <h2>Watch Facts</h2>
+          <div class="row">
+            <div class="col-6">
+              <div class="imgContainer">
+                <img src="Resources\Images\soyuz-fg__soyuz-tma-9__1.jpg" class="image imageRocket" />
+                <!-- <label class="missionLabel">&copy; skyrocket.de</label> -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" class="arrowSVG">
+                  <defs>
+                    <style>
+                      path,
+                      polyline {
+                        fill: none;
+                        stroke: #231f20;
+                        vector-effect: non-scaling-stroke;
+                        stroke-width: 2;
+                      }
+                      path {
+                        stroke-dasharray: 11, 5;
+                      }
+                    </style>
+                    <marker id="pointer" markerWidth="10" markerHeight="8" refX="9.5" refY="5.1" orient="-45" markerUnits="userSpaceOnUse">
+                      <polyline points="1 1, 9 5, 1 7" />
+                    </marker>
+                  </defs>
+                  <path d="M16.7,178 c87.6-46.9,162.9-185.4,227-136.4C307.2,90.1,195,158.5,111,108.9C71,85.2,92.2,30.7,126,7" marker-end="url(#pointer)" />
+                </svg>
+                <img src="Resources\Images\wb-mach-33-gravity-front.png" class="image imageWatch" />
+                <!-- <label class="crewLabel">&copy; Werenbach</label> -->
               </div>
             </div>
+
+            <div class="col-6">
+              <ul>
+                <li>Rocketpiece: Booster</li>
+                <li>Color: Orange (original)</li>
+                <li>Material: Original rocketmaterial</li>
+                <li>Flightheight: 45 Km+, Mesosphere</li>
+              </ul>
+            </div>
+          </div>
         </section>
-  
-        <section class="section section3 crew" id="section3">
-            <div class="row">
-              <div class="col-12">
-                <h2>Crew</h2>
-  
-                <!-- Tab links -->
-                <div class="tab">
-                  <button class="tablinks" onclick="openCity(event, 'Main')" id="defaultOpen">Main</button>
-                  <button class="tablinks" onclick="openCity(event, 'Backup')">Backup</button>
-                </div>
-  
-                <!-- Tab content 1 -->
-                <div id="Main" class="tabcontent">
-                  <div class="row">
-                    <div class="col-4">
-                      <div id="crewCard" class="crewCard darkCrew">
-                        <a href="https://en.wikipedia.org/wiki/Sergey_Prokopyev_(cosmonaut)" target="_blank" class="crewName crewInside">Sergey Prokopyev</a>
-                        <img src="Resources\Images\Sergey_Prokopyev_-_NASA_portrait.jpg" class="crewImg crewInside" />
-                        <p class="crewMisc crewInside">Commander, RSA</p>
-                      </div>
+
+        <section class="section section3 facts" id="section3">
+          <h2>Mission Facts</h2>
+          <div class="row">
+            <div class="col-6">
+              <div class="imgContainer">
+                <img src="Resources\Images\Soyuz MS-09.jpg" class="image imageMission" />
+                <label class="missionLabel">&copy; NASA 2018</label>
+                <img src="Resources\Images\Soyuz-MS-09-crew.png" class="image imageCrew" />
+                <label class="crewLabel">&copy; Spacefacts 2018</label>
+              </div>
+            </div>
+
+            <div class="col-6">
+              <ul>
+                <li>Mission: Soyuz MS-09</li>
+                <li>Operator: Roscosmos</li>
+                <li>Duration: 196d 17h 50m</li>
+                <li>Mission Date: 6 June 2018 - 20 December 2018</li>
+                <li>Spacecraft: Soyuz-MS</li>
+                <li>Rocket: Soyuz-FG</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="section section4 crew" id="section4">
+          <div class="row">
+            <div class="col-12">
+              <h2>Crew</h2>
+
+              <!-- Tab links -->
+              <div class="tab">
+                <button class="tablinks" onclick="openCity(event, 'Main')" id="defaultOpen">Main</button>
+                <button class="tablinks" onclick="openCity(event, 'Backup')">Backup</button>
+              </div>
+
+              <!-- Tab content 1 -->
+              <div id="Main" class="tabcontent">
+                <div class="row">
+                  <div class="col-4">
+                    <div id="crewCard" class="crewCard darkCrew">
+                      <a href="https://en.wikipedia.org/wiki/Sergey_Prokopyev_(cosmonaut)" target="_blank" class="crewName crewInside">Sergey Prokopyev</a>
+                      <img src="Resources\Images\Sergey_Prokopyev_-_NASA_portrait.jpg" class="crewImg crewInside" />
+                      <p class="crewMisc crewInside">Commander, RSA</p>
                     </div>
-  
-                    <div class="col-4">
-                      <div id="crewCard" class="crewCard darkCrew">
-                        <a href="https://en.wikipedia.org/wiki/Alexander_Gerst" target="_blank" class="crewName crewInside">Alexander Gerst</a>
-                        <img src="Resources\Images\Alexander_Gerst,_official_portrait_in_2017.jpg" class="crewImg crewInside" />
-                        <p class="crewMisc crewInside">Flight Engineer 1, ESA</p>
-                      </div>
+                  </div>
+
+                  <div class="col-4">
+                    <div id="crewCard" class="crewCard darkCrew">
+                      <a href="https://en.wikipedia.org/wiki/Alexander_Gerst" target="_blank" class="crewName crewInside">Alexander Gerst</a>
+                      <img src="Resources\Images\Alexander_Gerst,_official_portrait_in_2017.jpg" class="crewImg crewInside" />
+                      <p class="crewMisc crewInside">Flight Engineer 1, ESA</p>
                     </div>
-  
-                    <div class="col-4">
-                      <div id="crewCard" class="crewCard darkCrew">
-                        <a href="https://en.wikipedia.org/wiki/Serena_Au%C3%B1%C3%B3n-Chancellor" target="_blank" class="crewName crewInside">Serena M. Auñón-Chancellor</a>
-                        <img src="Resources\Images\Serena_M._Aunon,_NASA_astronaut_candidate.jpg" class="crewImg crewInside" />
-                        <p class="crewMisc crewInside">Flight Engineer 2, NASA</p>
-                      </div>
+                  </div>
+
+                  <div class="col-4">
+                    <div id="crewCard" class="crewCard darkCrew">
+                      <a href="https://en.wikipedia.org/wiki/Serena_Au%C3%B1%C3%B3n-Chancellor" target="_blank" class="crewName crewInside">Serena M. Auñón-Chancellor</a>
+                      <img src="Resources\Images\Serena_M._Aunon,_NASA_astronaut_candidate.jpg" class="crewImg crewInside" />
+                      <p class="crewMisc crewInside">Flight Engineer 2, NASA</p>
                     </div>
                   </div>
                 </div>
-  
-                <!-- Tab content 2 -->
-                <div id="Backup" class="tabcontent">
-                  <div class="row">
-                    <div class="col-4">
-                      <div id="crewCard" class="crewCard darkCrew">
-                        <a href="https://en.wikipedia.org/wiki/Oleg_Kononenko" target="_blank" class="crewName crewInside">Oleg D. Kononenko</a>
-                        <img src="Resources\Images\kononenko_oleg_d.jpg" class="crewImg crewInside" />
-                        <p class="crewMisc crewInside">Commander, RSA</p>
-                      </div>
+              </div>
+
+              <!-- Tab content 2 -->
+              <div id="Backup" class="tabcontent">
+                <div class="row">
+                  <div class="col-4">
+                    <div id="crewCard" class="crewCard darkCrew">
+                      <a href="https://en.wikipedia.org/wiki/Oleg_Kononenko" target="_blank" class="crewName crewInside">Oleg D. Kononenko</a>
+                      <img src="Resources\Images\kononenko_oleg_d.jpg" class="crewImg crewInside" />
+                      <p class="crewMisc crewInside">Commander, RSA</p>
                     </div>
-  
-                    <div class="col-4">
-                      <div id="crewCard" class="crewCard darkCrew">
-                        <a href="https://en.wikipedia.org/wiki/David_Saint-Jacques" target="_blank" class="crewName crewInside">David Saint-Jacques</a>
-                        <img src="Resources\Images\David_Saint-Jacques_official_portrait.jpg" class="crewImg crewInside" />
-                        <p class="crewMisc crewInside">Flight Engineer 1, CSA</p>
-                      </div>
+                  </div>
+
+                  <div class="col-4">
+                    <div id="crewCard" class="crewCard darkCrew">
+                      <a href="https://en.wikipedia.org/wiki/David_Saint-Jacques" target="_blank" class="crewName crewInside">David Saint-Jacques</a>
+                      <img src="Resources\Images\David_Saint-Jacques_official_portrait.jpg" class="crewImg crewInside" />
+                      <p class="crewMisc crewInside">Flight Engineer 1, CSA</p>
                     </div>
-  
-                    <div class="col-4">
-                      <div id="crewCard" class="crewCard darkCrew">
-                        <a href="https://en.wikipedia.org/wiki/Anne_McClain" target="_blank" class="crewName crewInside">Anne C. McClain</a>
-                        <img src="Resources\Images\Anne_C._McClain_portrait.jpg" class="crewImg crewInside" />
-                        <p class="crewMisc crewInside">Flight Engineer 2, NASA</p>
-                      </div>
+                  </div>
+
+                  <div class="col-4">
+                    <div id="crewCard" class="crewCard darkCrew">
+                      <a href="https://en.wikipedia.org/wiki/Anne_McClain" target="_blank" class="crewName crewInside">Anne C. McClain</a>
+                      <img src="Resources\Images\Anne_C._McClain_portrait.jpg" class="crewImg crewInside" />
+                      <p class="crewMisc crewInside">Flight Engineer 2, NASA</p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+          </div>
         </section>
       </div>
     </div>
 
     <footer class="footer-dark" id="footer">
       <div>
-        <p class="disclaimer">This Site isn't affiliated with <a href="https://www.werenbach.ch" target="_blank" class="CompanyLink">Werenbach</a> in any way. 
-          <a href="https://www.werenbach.ch/de/shop/mach33/gravity/" target="_blank" class="watchLink">To the watch.</a></p>
+        <p class="disclaimer">
+          This Site isn't affiliated with <a href="https://www.werenbach.ch" target="_blank" class="CompanyLink">Werenbach</a> in any way. <a href="https://www.werenbach.ch/de/shop/mach33/gravity/" target="_blank" class="watchLink">To the watch.</a>
+        </p>
         <!-- <a href="Impressum.html" class="footerLink">Impressum</a>
         <a href="Datenschutz.html" class="footerLink">Datenschutz</a> -->
         <p>&copy; Fatrixmpj 2022</p>

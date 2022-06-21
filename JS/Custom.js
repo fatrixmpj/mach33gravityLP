@@ -138,6 +138,15 @@ scrollTl
     opacity: 0,
   })
 
+  .from(".section1", { duration: 2 })
+
+  .from(".section3", {
+    opacity: 1,
+  })
+  .from(".section4", {
+    opacity: 0,
+  })
+
   .from(".section1", { duration: 2 });
 
 ScrollTrigger.create({

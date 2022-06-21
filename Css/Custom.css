@@ -22,6 +22,7 @@ body {
   margin-right: auto;
   position: absolute;
   left: 2.5vw;
+  padding-top: 8vh;
 }
 
 .description {
@@ -79,7 +80,7 @@ body {
 }
 
 .darkNav a:hover {
-  color: #278bd8;
+  color: #d87427;
 }
 
 .lightNav {
@@ -91,14 +92,14 @@ body {
 }
 
 .lightNav a:hover {
-  color: #278bd8;
+  color: #000;
 }
 
-.facts,
+/* .facts,
 .crew,
 .liveFeed {
   padding-top: 8vh;
-}
+} */
 
 .crewCard {
   width: 15vw;
@@ -211,6 +212,33 @@ main {
 
 .image {
   width: 48vw;
+}
+
+.arrowSVG {
+	position: absolute;
+	width: 8vw;
+	top: 52vh;
+	left: 33vw;
+	z-index: 3;
+	rotate: 51deg;
+}
+
+.imageWatch {
+	height: auto;
+	width: 14vw;
+	margin-top: -57vh;
+	z-index: 1;
+	position: relative;
+	rotate: -21deg;
+	margin-left: 26vw;
+}
+
+.imageRocket {
+	height: auto;
+	width: 20vw;
+	rotate: -61deg;
+	margin-left: 14vw;
+	margin-top: -10vh;
 }
 
 /* Group pic crew */
