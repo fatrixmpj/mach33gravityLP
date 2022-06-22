@@ -143,13 +143,10 @@ gsap.defaults({ ease: "none", duration: 1 });
 
 let scrollTl = gsap.timeline();
 
-scrollTl
-  .to(".scroll-down", {
-    // opacity: 0
+scrollTl.to(".scroll-down", {
     yPercent: -1500,
   })
   .to(".backgroundDiv", {
-    // opacity: 0
     yPercent: -100,
   }, "<")
 
@@ -199,6 +196,53 @@ ScrollTrigger.create({
   pin: ".main",
   anticipatePin: 1,
   // markers: true,
+});
+
+// Watch Facts 
+let watchTextTl = gsap.timeline();
+
+watchTextTl.from(".watchText", {
+  xPercent: 10
+})
+.from(".watchImgContainer", {
+  xPercent: -10
+}, "0")
+.from(".watchLi", {
+  xPercent: 10
+}, "0");
+
+ScrollTrigger.create({
+  animation: watchTextTl,
+  trigger: ".watchFacts",
+  start: "300% top",
+  end: "600%",
+  scrub: true,
+  markers: true,
+});
+
+// Rocket Facts 
+let rocketTextTl = gsap.timeline();
+
+rocketTextTl.from(".imageMission", {
+  xPercent: 10
+})
+.from(".imageCrew", {
+  xPercent: -10
+}, "0")
+.from(".imagePatch", {
+  xPercent: 10
+}, "0")
+.from(".rocketLi", {
+  xPercent: -10
+}, "0");
+
+ScrollTrigger.create({
+  animation: rocketTextTl,
+  trigger: ".facts",
+  start: "550% top",
+  end: "900%",
+  scrub: true,
+  markers: true,
 });
 
 // GSDevTools.create();to

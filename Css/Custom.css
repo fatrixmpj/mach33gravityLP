@@ -234,7 +234,7 @@ main {
 .arrowSVG {
 	position: absolute;
 	width: 10vw;
-	top: 38.5vh;
+	top: 25.5vh;
 	left: 39.5vw;
 	z-index: 3;
 	rotate: 63deg;
@@ -268,8 +268,8 @@ main {
 .imagePatch {
 	position: absolute;
 	width: 19vw;
-	bottom: 7vh;
-	right: 2vw;
+	bottom: 8vh;
+	right: 0;
 	rotate: 20deg;
 }
 
@@ -443,30 +443,30 @@ main {
 
 .watchLi1,
 .rocketLi1 {
-  margin-left: 5vw;
+  margin-left: 7vw;
 }
 
 .watchLi2,
 .rocketLi2 {
-  margin-left: 10vw;
+  margin-left: 12vw;
 }
 
 .watchLi3,
 .rocketLi3 {
-  margin-left: 15vw;
+  margin-left: 17vw;
 }
 
 .watchLi4,
 .rocketLi4 {
-  margin-left: 20vw;
+  margin-left: 22vw;
 }
 
 .rocketLi5 {
-  margin-left: 25vw;
+  margin-left: 27vw;
 }
 
 .rocketLi6 {
-  margin-left: 30vw;
+  margin-left: 32vw;
 }
 
 .descriptionH6 {
