@@ -1,3 +1,4 @@
+
 function toggleWhiteMode() {
   var body = document.body;
   body.classList.toggle("whiteMode");
@@ -18,6 +19,11 @@ function toggleWhiteMode() {
     var whiteNav = document.getElementById("navBrand");
     whiteNav.classList.add("navBrandHover");
     whiteNav.classList.remove("navBrandHoverDark");
+
+    // Progressbar COLOR
+    var whiteProgress = document.getElementById("progress-bar");
+    whiteProgress.classList.add("progress-bar-light");
+    whiteProgress.classList.remove("progress-bar-dark");
 
     // BUTTON COLOR
     var whiteBtn = document.getElementById("btn");
@@ -49,6 +55,11 @@ function toggleWhiteMode() {
     var darkNav = document.getElementById("navBrand");
     darkNav.classList.add("navBrandHoverDark");
     darkNav.classList.remove("navBrandHover");
+
+    // Progressbar COLOR
+    var darkProgress = document.getElementById("progress-bar");
+    darkProgress.classList.add("progress-bar-dark");
+    darkProgress.classList.remove("progress-bar-light");
 
     // BUTTON COLOR
     var darkBtn = document.getElementById("btn");
@@ -96,6 +107,36 @@ document.getElementById("defaultOpen").click();
 // *******************
 // * GSAP ANIMATIONS *
 // *******************
+
+// Textscramble
+let textTl = gsap.timeline({
+  duration: 3,
+  ease: "none"
+});
+
+textTl.to(".descriptionP", {
+  text: "Watch the Earth from space and learn about the mission of the rocket you own a piece of", 
+})
+.to(".descriptionH1", {
+  text: "Gravity", 
+}, "<")
+.set(".descriptionH6", {
+  opacity: 1
+})
+.to(".descriptionH6", {
+  text: "Mach 33", 
+});
+
+// Arrow Bounce
+let arrowTl = gsap.timeline({
+    repeat: -1
+});
+
+arrowTl.to(".arrow", {
+    yPercent: -10
+}).to(".arrow", {
+    yPercent: 10
+}).repeat()
 
 // ScrollTrigger
 gsap.defaults({ ease: "none", duration: 1 });
@@ -160,16 +201,19 @@ ScrollTrigger.create({
   // markers: true,
 });
 
-
-// Arrow Bounce
-let arrowTl = gsap.timeline({
-    repeat: -1
-});
-
-arrowTl.to(".arrow", {
-    yPercent: -10
-}).to(".arrow", {
-    yPercent: 10
-}).repeat()
-
 // GSDevTools.create();to
+
+
+// ***************************************
+// * The progress bar (scroll indicator) *
+// ***************************************
+const animateProgressBar = () => {
+
+  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  var scrolled = (winScroll / height) * 100;
+  document.getElementById("progress-bar").style.width = scrolled + "%";
+
+}
+
+window.addEventListener('scroll', animateProgressBar);

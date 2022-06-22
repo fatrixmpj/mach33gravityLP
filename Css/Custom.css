@@ -70,6 +70,10 @@ body {
   display: none !important;
 }
 
+.navImg {
+	width: 2vw;
+}
+
 .darkNav {
   background-color: #4d4d4d !important;
   box-shadow: 0 2px 10px 10px #262626;
@@ -214,30 +218,42 @@ main {
   width: 48vw;
 }
 
+/* Section2 Watch Facts */
+
+.watchText {
+	position: absolute;
+	left: 0;
+	bottom: 41vh;
+	width: 27vw;
+}
+
+.watchText2 {
+	bottom: 30vh !important;
+}
+
 .arrowSVG {
 	position: absolute;
-	width: 8vw;
-	top: 52vh;
-	left: 33vw;
+	width: 10vw;
+	top: 38.5vh;
+	left: 39.5vw;
 	z-index: 3;
-	rotate: 51deg;
+	rotate: 63deg;
 }
 
 .imageWatch {
 	height: auto;
 	width: 14vw;
-	margin-top: -57vh;
+	margin-top: -159vh;
 	z-index: 1;
 	position: relative;
-	rotate: -21deg;
-	margin-left: 26vw;
+	rotate: -18deg;
+	margin-left: 33vw;
 }
 
 .imageRocket {
 	height: auto;
-	width: 20vw;
-	rotate: -61deg;
-	margin-left: 14vw;
+	width: 82vw;
+	margin-left: 7vw;
 	margin-top: -10vh;
 }
 
@@ -247,6 +263,14 @@ main {
   margin-left: 36%;
   width: 40vw;
   position: relative;
+}
+
+.imagePatch {
+	position: absolute;
+	width: 19vw;
+	bottom: 7vh;
+	right: 2vw;
+	rotate: 20deg;
 }
 
 /* Portraits of crew */
@@ -377,4 +401,74 @@ main {
   position: absolute;
   width: 100%;
   height: 100%;
+}
+
+/* The progress bar (scroll indicator) */
+#progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 0.2rem;
+  width: 0%;
+  max-width: 100%;
+  min-width: 0%;
+  z-index: 100;
+  transition: width 0.2s ease-out;
+}
+
+.progress-bar-dark {
+  background: linear-gradient(to right, #ff5f6d, #ffc371);
+}
+
+.progress-bar-light {
+  background: linear-gradient(to right, #278bd8, #93cbf1);
+}
+
+
+.watchLi,
+.rocketLi {
+	list-style-type: none;
+}
+
+.watchLi2,
+.watchLi3,
+.watchLi4,
+.rocketLi2,
+.rocketLi3,
+.rocketLi4,
+.rocketLi5,
+.rocketLi6 {
+	margin-top: 5vh;
+}
+
+.watchLi1,
+.rocketLi1 {
+  margin-left: 5vw;
+}
+
+.watchLi2,
+.rocketLi2 {
+  margin-left: 10vw;
+}
+
+.watchLi3,
+.rocketLi3 {
+  margin-left: 15vw;
+}
+
+.watchLi4,
+.rocketLi4 {
+  margin-left: 20vw;
+}
+
+.rocketLi5 {
+  margin-left: 25vw;
+}
+
+.rocketLi6 {
+  margin-left: 30vw;
+}
+
+.descriptionH6 {
+  opacity: 0;
 }
