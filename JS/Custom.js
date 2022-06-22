@@ -214,10 +214,10 @@ watchTextTl.from(".watchText", {
 ScrollTrigger.create({
   animation: watchTextTl,
   trigger: ".watchFacts",
-  start: "300% top",
+  start: "240% top",
   end: "600%",
   scrub: true,
-  markers: true,
+  // markers: true,
 });
 
 // Rocket Facts 
@@ -242,7 +242,7 @@ ScrollTrigger.create({
   start: "550% top",
   end: "900%",
   scrub: true,
-  markers: true,
+  // markers: true,
 });
 
 // GSDevTools.create();to
