@@ -8,6 +8,10 @@ body {
   color: #d87427 !important;
 }
 
+.bodyContainer {
+  overflow: hidden;
+}
+
 .bodyContainer a {
   display: inline-block;
   color: #d87427;
@@ -39,7 +43,7 @@ body {
   font-weight: 100;
   font-size: 15px;
   text-transform: uppercase;
-  padding-left: 3.5vw;
+  padding-left: 4.5vw;
 }
 
 .description h1 {
@@ -146,7 +150,7 @@ footer {
   position: fixed;
   bottom: 0;
   width: 100vw;
-  z-index: 11;
+  /* z-index: 11; */
 }
 
 .footer-dark {
@@ -168,7 +172,7 @@ footer {
 }
 
 footer p {
-  width: 7vw;
+  width: 10vw;
   padding-top: 10px;
   right: 5px;
   position: absolute;
@@ -193,9 +197,25 @@ footer p {
   text-decoration: none;
 }
 
-.footerLink:hover,
+.impressum a {
+  color: #d87427;
+}
+
+.impressum a:hover {
+  color: #278bd8;
+}
+
+.linkFooter {
+	margin-right: 7vw;
+}
+
+.linkFooter a {
+	text-decoration: none;
+}
+
+.linkFooter a:hover,
 .watchLink:hover,
-.CompanyLink:hover {
+.CompanyLink:hover{
   color: #278bd8;
 }
 
@@ -234,10 +254,14 @@ main {
 .arrowSVG {
 	position: absolute;
 	width: 10vw;
-	top: 25.5vh;
-	left: 39.5vw;
+	top: 27.5vh;
+	left: 40vw;
 	z-index: 3;
-	rotate: 63deg;
+	rotate: 55deg;
+}
+
+.arrowMarker {
+  opacity: 0;
 }
 
 .imageWatch {
@@ -358,7 +382,7 @@ main {
 
 .scroll-down {
   text-align: center;
-  margin-top: 50vh;
+  margin-top: 30vh;
 }
 
 #myVideo {
@@ -471,4 +495,28 @@ main {
 
 .descriptionH6 {
   opacity: 0;
+}
+
+.impressum {
+	width: 95vw !important;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 15vh !important;
+}
+
+.bodyContainerImpressum {
+  width: 99%;
+}
+
+.impressumH1 {
+  margin-bottom: 5vh;
+}
+
+.disclaimerImpressum {
+  font-weight: 800;
+}
+
+.CompanyLinkImpressum {
+  text-decoration: none;
+  cursor: pointer;
 }

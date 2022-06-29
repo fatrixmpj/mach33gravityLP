@@ -110,21 +110,38 @@ document.getElementById("defaultOpen").click();
 
 // Textscramble
 let textTl = gsap.timeline({
+  delay: 0,
   duration: 3,
   ease: "none"
 });
 
 textTl.to(".descriptionP", {
-  text: "Watch the Earth from space and learn about the mission of the rocket you own a piece of", 
+  scrambleText: {
+    text: "Watch the Earth from space and learn about the mission of the rocket you own a piece of", 
+    chars: "upperAndLowerCase",
+    // revealDelay: 0.5,
+    tweenLength: true,
+    newClass: "descriptionP"
+  }
 })
 .to(".descriptionH1", {
-  text: "Gravity", 
+  scrambleText: {
+    text: "Gravity", 
+    chars: "upperAndLowerCase",
+    // revealDelay: 0.5,
+    tweenLength: true
+  }
 }, "<")
 .set(".descriptionH6", {
   opacity: 1
 })
 .to(".descriptionH6", {
-  text: "Mach 33", 
+  scrambleText: {
+    text: "Mach 33", 
+  chars: "upperAndLowerCase",
+  // revealDelay: 0.5,
+  tweenLength: true
+  }
 });
 
 // Arrow Bounce
@@ -209,7 +226,14 @@ watchTextTl.from(".watchText", {
 }, "0")
 .from(".watchLi", {
   xPercent: 10
-}, "0");
+}, "0")
+.to(".arrowPath", {
+  // duration: 4,
+  drawSVG: "100%"
+}, 0.5)
+.set(".arrowMarker", {
+  opacity: 1
+}, 1.1);
 
 ScrollTrigger.create({
   animation: watchTextTl,
@@ -245,7 +269,7 @@ ScrollTrigger.create({
   // markers: true,
 });
 
-// GSDevTools.create();to
+// GSDevTools.create({animation: textTl});
 
 
 // ***************************************
