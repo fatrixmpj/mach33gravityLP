@@ -5,92 +5,153 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Gravity: Datenschutz</title>
-    <meta
-      name="description"
-      content="Werenbach Mach 33 Gravity Uhr NFC Chip Landingpage"
-    />
+    <title>Gravity</title>
+    <meta name="description" content="Werenbach Mach 33 Gravity Uhr NFC Chip Landingpage" />
     <meta name="author" content="SitePoint" />
 
     <meta property="og:title" content="A Basic HTML5 Template" />
     <meta property="og:type" content="website" />
-    <meta
-      property="og:url"
-      content="https://www.sitepoint.com/a-basic-html5-template/"
-    />
-    <meta
-      property="og:description"
-      content="Werenbach Mach 33 Gravity Uhr NFC Chip Landingpage"
-    />
+    <!-- <meta property="og:url" content="https://www.sitepoint.com/a-basic-html5-template/" /> -->
+    <meta property="og:description" content="Werenbach Mach 33 Gravity Uhr NFC Chip Landingpage" />
     <meta property="og:image" content="image.png" />
 
-    <link rel="icon" href="/favicon.ico" />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="Resources\favicon_package/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="Resources\favicon_package/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="Resources\favicon_package/favicon-16x16.png" />
+    <link rel="manifest" href="Resources\favicon_package/site.webmanifest" />
+    <link rel="mask-icon" href="Resources\favicon_package/safari-pinned-tab.svg" color="#5bbad5" />
+    <link rel="shortcut icon" href="Resources\favicon_package/favicon.ico" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="msapplication-config" content="Resources\favicon_package/browserconfig.xml" />
+    <meta name="theme-color" content="#ffffff" />
 
-    <link rel="stylesheet" href="css/Custom.css" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
-      crossorigin="anonymous"
-    />
+    <link rel="stylesheet" href="Css/Custom.css" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
   </head>
 
   <body class="body">
     <header class="mainMenu">
       <nav class="navbar navbar-expand-lg darkNav mainNav" id="mainNav">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Gravity</a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
+          <a class="navbar-brand navBrandHoverDark" id="navBrand" href="index.html"><img src="Resources\Images\soyuz-ms-09-mission-patch-1024x1024.png" class="navImg" /> </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link" href="#section2">Facts</a>
+                <a class="nav-link">Live Feed</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#section3">Crew</a>
+                <a class="nav-link">Watch Facts</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link">Mission Facts</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link">Crew</a>
               </li>
             </ul>
-            <a
-              onclick="toggleWhiteMode()"
-              class="btn btn-outline-light"
-              id="btn"
-            >
+            <a onclick="toggleWhiteMode()" class="btn btn-outline-dark" id="btn">
               <i class="fa-solid fa-sun" id="sun"></i>
               <i class="fa-solid fa-moon hidden" id="moon"></i>
             </a>
           </div>
         </div>
       </nav>
+
+      <div id="progress-bar" class="progress-bar-dark"></div>
     </header>
 
-    <div class="main">
-        
+    <div class="bodyContainerPrivacy">
+      <div class="main">
+        <div class="row">
+          <div class="col-12 privacy">
+            <h1 class="privacyH1">Privacy Policy</h1>
+
+            <strong>General</strong><br/>
+            Based on Article 13 of the Swiss Federal Constitution and the data protection provisions of the Swiss Confederation (Data Protection Act, DSG), 
+            every person has the right to protection of their privacy as well as protection against misuse of their personal data. 
+            The operators of these pages take the protection of your personal data very seriously. We treat your personal data confidentially and in accordance 
+            with the legal data protection regulations as well as this privacy policy.<br/>
+            <br/>
+            In cooperation with our hosting providers, we make every effort to protect the databases as well as possible against unauthorized access, loss, 
+            misuse or falsification.<br/>
+            <br/>
+            We would like to point out that data transmission on the Internet (e.g. communication by e-mail) can have security gaps. A complete protection of 
+            data against access by third parties is not possible.<br/>
+            <br/>
+            By using this website, you consent to the collection, processing and use of data in accordance with the following description. 
+            This website can generally be visited without registration. Data such as pages accessed or names of files accessed, date and time are stored 
+            on the server for statistical purposes without this data being directly related to your person. Personal data, in particular name, 
+            address or e-mail address are collected as far as possible on a voluntary basis. Without your consent, 
+            the data will not be passed on to third parties.<br/>
+            <br/>
+            <strong>Cookies</strong><br/>
+            This website uses cookies. These are small text files that make it possible to store specific information related to the user on the user's 
+            terminal device while the user is using the website. Cookies make it possible, in particular, to determine the frequency of use and number of 
+            users of the pages, to analyze behavior patterns of page use, but also to make our offer more customer-friendly. Cookies remain stored beyond 
+            the end of a browser session and can be retrieved when you visit the site again. If you do not wish this to happen, you should set your Internet 
+            browser so that it refuses to accept cookies.<br/><br/>A general objection to the use of cookies used for online marketing purposes can be declared 
+            for a large number of the services, especially in the case of tracking, via the U.S. site http://www.aboutads.info/choices/ or the 
+            EU site http://www.youronlinechoices.com/. Furthermore, the storage of cookies can be achieved by disabling them in the browser settings. 
+            Please note that in this case not all functions of this online offer can be used.<br/>
+            <br/>
+            <strong>Copyrights</strong><br/>
+            The copyright and all other rights to the content, images, photos or other files on the website belong exclusively to the operator of this website 
+            or the specifically named copyright holders. For the reproduction of all files, the written consent of the copyright holder must be obtained in 
+            advance.<br/>Anyone who commits a copyright infringement without the consent of the respective copyright holder may be liable to prosecution and 
+            possibly to damages.<br/><br/><strong>Disclaimer</strong><br/>All information on our website has been carefully checked. We make every effort to 
+            ensure that the information we provide is up-to-date, correct and complete. Nevertheless, the occurrence of errors can not be completely excluded, 
+            so we can not guarantee the completeness, accuracy and timeliness of information, including journalistic-editorial nature. Liability claims 
+            regarding damage caused by the use of any information provided, including any kind of information which is incomplete or incorrect, will 
+            therefore be rejected.<br/>
+            The publisher may change or delete texts at his own discretion and without notice and is not obliged to update the contents of this website. 
+            The use of or access to this website is at the visitor's own risk. The publisher, its clients or partners are not responsible for damages, 
+            such as direct, indirect, incidental, consequential or punitive damages, allegedly caused by the visit of this website and consequently assume 
+            no liability for such damages.<br/>
+            The publisher also accepts no responsibility or liability for the content and availability of third-party websites that can be accessed 
+            via external links on this website. The operators of the linked sites are solely responsible for their content. The publisher thus expressly 
+            distances itself from all third-party content that may be relevant under criminal or liability law or that may offend common decency.<br/>
+            <br/>
+            <strong>YouTube</strong><br/>
+            Functions of the ""YouTube"" service are integrated on this website. ""YouTube"" is owned by Google Ireland Limited, a company incorporated and 
+            operated under the laws of Ireland, with its registered office at Gordon House, Barrow Street, Dublin 4, Ireland, which operates the services in 
+            the European Economic Area and Switzerland.<br/>Your legal agreement with ""YouTube"" consists of the terms and conditions found at the following 
+            link: <a href="https://www.youtube.com/static?gl=de&template=terms">https://www.youtube.com/static?gl=de&template=terms</a>. These Terms constitute a 
+            legally binding agreement between you and ""YouTube"" regarding your use of the Services. Google's Privacy Policy explains how ""YouTube"" treats 
+            and protects your personal information when you use the Service.<br/>
+            <br/>
+            <strong>Disclaimer</strong><br/>The author assumes no liability for the correctness, accuracy, timeliness, reliability and completeness of the information.<br/>
+            Liability claims against the author for material or immaterial damage resulting from access to, use or non-use of the published information, 
+            from misuse of the connection or from technical malfunctions are excluded.<br/><br/>All offers are non-binding. The author expressly reserves 
+            the right to change, add to, or delete parts of the pages or the entire offer without prior notice, or to temporarily or permanently cease publication.<br/>
+            <br/>
+            <strong>Source</strong>: <a style='color:inherit;text-decoration:none;' href='https://brainbox.swiss/'>BrainBox Solutions</a></p>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <footer>
-      <div class="footer">
-        <a href="" class="footerLink">Impressum</a>
-        <a href="" class="footerLink">Datenschutz</a>
+    <footer class="footer-dark" id="footer">
+      <div>
+        <p class="disclaimer"><a href="https://www.werenbach.ch/de/shop/mach33/gravity/" target="_blank" class="watchLink">Buy the watch.</a></p>
+        <!-- <a href="Impressum.html" class="footerLink">Impressum</a>
+        <a href="Datenschutz.html" class="footerLink">Datenschutz</a> -->
+        <p class="linkFooter">
+          <a href="Impressum.html" class="legalNotice">Legal Notice</a>
+          <a href="Datenschutz.html" class="privacyPolicy">Privacy Policy</a>
+        </p>
         <p>&copy; Fatrixmpj 2022</p>
       </div>
     </footer>
 
-    <script
-      src="https://kit.fontawesome.com/a7b71de8af.js"
-      crossorigin="anonymous"
-    ></script>
-    <script src="js/Custom.js"></script>
+    <script src="https://kit.fontawesome.com/a7b71de8af.js" crossorigin="anonymous" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js" type="text/javascript"></script>
+    <script src="JS/ScrambleTextPlugin.min.js" type="text/javascript"></script>
+    <script src="JS/GSDevTools.min.js" type="text/javascript"></script>
+    <script src="JS/DrawSVGPlugin.min.js" type="text/javascript"></script>
+    <script src="JS/Custom.js" type="text/javascript"></script>
   </body>
 </html>

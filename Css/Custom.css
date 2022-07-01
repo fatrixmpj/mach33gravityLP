@@ -74,12 +74,22 @@ body {
   display: none !important;
 }
 
+/* #mainNav {
+	height: 7vh;
+} */
+
 .navImg {
-	width: 2vw;
+	top: 1.5vh;
+	left: 2vh;
+	position: absolute;
+}
+
+.navItem {
+  margin-left: 3vw;
 }
 
 .darkNav {
-  background-color: #4d4d4d !important;
+  background-color: #4d4d4d;
   box-shadow: 0 2px 10px 10px #262626;
 }
 
@@ -197,16 +207,18 @@ footer p {
   text-decoration: none;
 }
 
-.impressum a {
+.impressum a,
+.privacy a {
   color: #d87427;
 }
 
-.impressum a:hover {
+.impressum a:hover,
+.privacy a:hover {
   color: #278bd8;
 }
 
 .linkFooter {
-	margin-right: 7vw;
+	margin-right: 15vw;
 }
 
 .linkFooter a {
@@ -238,6 +250,11 @@ main {
   width: 48vw;
 }
 
+.arrow {
+	text-align: center;
+  opacity: 0;
+}
+
 /* Section2 Watch Facts */
 
 .watchText {
@@ -253,11 +270,11 @@ main {
 
 .arrowSVG {
 	position: absolute;
-	width: 10vw;
-	top: 27.5vh;
-	left: 40vw;
+	width: 9vw;
+	top: 28vh;
+	left: 40.5vw;
 	z-index: 3;
-	rotate: 55deg;
+	rotate: 63deg;
 }
 
 .arrowMarker {
@@ -332,42 +349,72 @@ main {
 /* Style the tab */
 .tab {
   overflow: hidden;
-  border: 1px solid #0d0d0d;
   border-bottom: none;
+}
+
+.tabDark {
+  border: 1px solid #0d0d0d;
   background-color: #0d0d0d;
+}
+
+.tabLight {
+  border: 1px solid #d87427;
+  background-color: #d87427;
 }
 
 /* Style the buttons that are used to open the tab content */
 .tab button {
-  background-color: #1A1A1A;
   float: left;
   border: none;
   outline: none;
   cursor: pointer;
   padding: 14px 16px;
   transition: 0.3s;
-  color: #d87427;
 }
 
-/* Change background color of buttons on hover */
-.tab button:hover {
+.tablinksDark {
+  color: #d87427;
+  background-color: #1A1A1A;
+}
+
+.tablinksDark:hover {
   background-color: #404040;
 }
 
-/* Create an active/current tablink class */
-.tab button.active {
+.tablinksDark:active {
   background-color: #262626;
+}
+
+.tablinksWhite {
+  color: #1A1A1A;
+  background-color: #e6902f;
+}
+
+.tablinksWhite:hover {
+  background-color: #eda843;
+}
+
+.tablinksWhite.active {
+  background-color: #cc5f23;
 }
 
 /* Style the tab content */
 .tabcontent {
   display: none;
   padding: 6px 12px;
-  border: 1px solid #1A1A1A;
   border-top: none;
   height: 90%;
   animation: fadeEffect 1s; /* Fading effect takes 1 second */
+}
+
+.tabcontentDark {
+  border: 1px solid #1A1A1A;
   background-color: #1A1A1A;
+}
+
+.tabcontentLight {
+  border: 1px solid #cc5f23;
+  background-color: #cc5f23;
 }
 
 /* Go from zero to full opacity */
@@ -497,18 +544,22 @@ main {
   opacity: 0;
 }
 
-.impressum {
+.impressum,
+.privacy {
 	width: 95vw !important;
 	margin-right: auto;
 	margin-left: auto;
 	margin-top: 15vh !important;
+  margin-bottom: 10vh;
 }
 
-.bodyContainerImpressum {
+.bodyContainerImpressum,
+.bodyContainerPrivacy {
   width: 99%;
 }
 
-.impressumH1 {
+.impressumH1,
+.privacyH1 {
   margin-bottom: 5vh;
 }
 
@@ -519,4 +570,232 @@ main {
 .CompanyLinkImpressum {
   text-decoration: none;
   cursor: pointer;
+}
+
+.privacyPolicy {
+	width: 6vw;
+	position: absolute;
+}
+
+.legalNotice {
+	margin-right: 2vw;
+}
+
+.datenschutzLink {
+	font-size: 15px;
+	letter-spacing: 0.18rem;
+	background-color: #d87427;
+	display: inline-block;
+	padding: 12px 20px;
+	font-weight: 600;
+	line-height: 100%;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	cursor: pointer;
+	border: 0px solid #d87427;
+	text-transform: uppercase;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+	text-decoration: none !important;
+	transition: all 0.3s ease;
+	color: #fff !important;
+  margin-top: 1vh;
+}
+
+.datenschutzLink:hover {
+	background-color: #278bd8;
+}
+
+.factPtext {
+  position: absolute;
+  bottom: 4.5vh;
+  left: 2vw;
+  width: 45vw;
+}
+
+.fakeNavImg {
+  position: absolute;
+  z-index: 99999;
+}
+
+.factModal {
+	z-index: 9999999;
+	position: relative;
+}
+
+
+/* Modal Button */
+#myModalBtn {
+	width: 10vw;
+	left: 5vw;
+	position: relative;
+	top: 24vh;
+  color: #d87427;
+  z-index: 1;
+}
+
+#myModalBtn:hover {
+  color: #000;
+}
+
+#cookieModalBtn {
+	border: 1px solid #278bd8;
+	color: #000;
+	margin-right: 37%;
+	margin-left: 37%;
+	width: 26%;
+}
+
+#cookieModalBtn:hover {
+	background-color: #278bd8;
+	color: #000;
+}
+
+/* The Modal (background) */
+.w3modal,
+.cookieModal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+}
+
+.cookieModal {
+	z-index: 99999999;
+	margin-top: 10vh;
+	width: 20vw;
+	margin-left: 1vw;
+}
+
+/* Modal Content */
+.modalContent {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  -webkit-animation-name: slideIn;
+  -webkit-animation-duration: 0.4s;
+  animation-name: slideIn;
+  animation-duration: 0.4s;
+}
+
+.modalContentDark {
+  background-color: #121212 !important;
+}
+
+.modalContentLight {
+  background-color: #fff !important;
+}
+
+.thDark {
+  background-color: #333333 !important;
+}
+
+.ttDark {
+  background-color: #121212 !important;
+}
+
+.ttDarker {
+  background-color: #333333 !important;
+}
+
+.thLight {
+  background-color: #fff !important;
+}
+
+.ttLight {
+  background-color: #cccccc !important;
+}
+
+.ttLighter {
+  background-color: #fff !important;
+}
+
+/* The Close Button */
+.close,
+.cookieClose {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus,
+.cookieClose:hover,
+.cookieClose:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modalHeader,
+.cookieModalHeader {
+	padding: 2px 16px;
+	background-color: #d87427;
+	color: white;
+	border-bottom: none !important;
+	margin-bottom: 2vh;
+}
+
+.cookieModalHeader {
+	border-top-right-radius: 12px;
+	border-top-left-radius: 12px;
+}
+
+.cookieModalHeader h2 {
+	font-size: 26px;
+	text-align: center;
+}
+
+.modalBody {padding: 2px 16px;}
+
+.cookieModalBody {
+  text-align: center;
+}
+
+.modalFooter,
+.cookieModalFooter {
+	padding: 2px 16px;
+	background-color: #d87427 !important;
+	color: white;
+	border-top: none !important;
+	margin-top: 2vh;
+}
+
+.cookieModalFooter {
+	border-bottom-left-radius: 12px;
+	border-bottom-right-radius: 12px;
+}
+
+.tableHeader {
+	font-weight: 900;
+	text-transform: uppercase;
+}
+
+.crewMiscOleg {
+	position: relative;
+	height: 5vh;
+	bottom: 3vh;
+}
+
+.crewMiscOlegDark {
+	background-color: #121212;
+}
+
+.crewMiscOlegLight {
+	background-color: #af3939;
+
+}
+
+.crewImgOleg {
+	height: auto;
+	width: 14.9vw;
 }

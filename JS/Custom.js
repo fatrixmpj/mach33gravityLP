@@ -1,9 +1,22 @@
 
+var getLocalDarkVar = localStorage.getItem('dark');
+if(getLocalDarkVar == "true") {
+  console.log("dark Theme");
+  toggleDarkMode();
+}else {
+  console.log("Light Theme");
+  toggleWhiteMode();
+}
+
+// FIXME: Fix toggles
 function toggleWhiteMode() {
-  var body = document.body;
+    var body = document.body;
   body.classList.toggle("whiteMode");
 
   if (document.body.classList.contains("whiteMode")) {
+		localStorage.removeItem('light', true);	
+    localStorage.setItem('dark',false);
+
     // ICONS
     var modeSun = document.getElementById("sun");
     modeSun.classList.add("hidden");
@@ -34,12 +47,137 @@ function toggleWhiteMode() {
     var whiteFooter = document.getElementById("footer");
     whiteFooter.classList.add("footer-light");
     whiteFooter.classList.remove("footer-dark");
+    
+    // Modal COLOR
+    var whiteModal = document.getElementById("modalMode");
+    whiteModal.classList.add("modalContentLight");
+    whiteModal.classList.remove("modalContentDark");
+
+    // Table Header COLOR
+    var whiteTable = document.getElementsByClassName("tableHeader");
+    whiteTable[0].classList.add("thLight");
+    whiteTable[0].classList.remove("thDark");
+
+    whiteTable[1].classList.add("thLight");
+    whiteTable[1].classList.remove("thDark");
+
+    // Table Text COLOR
+    var whiteText = document.getElementsByClassName("ttDarkLight");
+    whiteText[0].classList.add("ttLight");
+    whiteText[0].classList.remove("ttDark");
+
+    whiteText[1].classList.add("ttLight");
+    whiteText[1].classList.remove("ttDark");
+
+    whiteText[2].classList.add("ttLight");
+    whiteText[2].classList.remove("ttDark");
+
+    whiteText[3].classList.add("ttLight");
+    whiteText[3].classList.remove("ttDark");
+
+    whiteText[4].classList.add("ttLight");
+    whiteText[4].classList.remove("ttDark");
+
+    whiteText[5].classList.add("ttLight");
+    whiteText[5].classList.remove("ttDark");
+
+    whiteText[6].classList.add("ttLight");
+    whiteText[6].classList.remove("ttDark");
+
+    whiteText[7].classList.add("ttLight");
+    whiteText[7].classList.remove("ttDark");
+
+    // Table Text lighter COLOR
+    var whiterText = document.getElementsByClassName("ttDarkerLighter");
+    whiterText[0].classList.add("ttLighter");
+    whiterText[0].classList.remove("ttDarker");
+
+    whiterText[1].classList.add("ttLighter");
+    whiterText[1].classList.remove("ttDarker");
+
+    whiterText[2].classList.add("ttLighter");
+    whiterText[2].classList.remove("ttDarker");
+
+    whiterText[3].classList.add("ttLighter");
+    whiterText[3].classList.remove("ttDarker");
+
+    whiterText[4].classList.add("ttLighter");
+    whiterText[4].classList.remove("ttDarker");
+
+    whiterText[5].classList.add("ttLighter");
+    whiterText[5].classList.remove("ttDarker");
+
+    whiterText[6].classList.add("ttLighter");
+    whiterText[6].classList.remove("ttDarker");
+
+    whiterText[7].classList.add("ttLighter");
+    whiterText[7].classList.remove("ttDarker");
 
     // CrewCard COLOR
     var whiteCrewCard = document.getElementsByClassName("crewCard");
-    whiteCrewCard.classList.add("lightCrew");
-    whiteCrewCard.classList.remove("darkCrew");
+    whiteCrewCard[0].classList.add("lightCrew");
+    whiteCrewCard[0].classList.remove("darkCrew");
+
+    whiteCrewCard[1].classList.add("lightCrew");
+    whiteCrewCard[1].classList.remove("darkCrew");
+
+    whiteCrewCard[2].classList.add("lightCrew");
+    whiteCrewCard[2].classList.remove("darkCrew");
+
+    whiteCrewCard[3].classList.add("lightCrew");
+    whiteCrewCard[3].classList.remove("darkCrew");
+
+    whiteCrewCard[4].classList.add("lightCrew");
+    whiteCrewCard[4].classList.remove("darkCrew");
+
+    whiteCrewCard[5].classList.add("lightCrew");
+    whiteCrewCard[5].classList.remove("darkCrew");
+
+    // Tab COLOR
+    var whiteTab = document.getElementById("tab");
+    whiteTab.classList.add("tabLight");
+    whiteTab.classList.remove("tabDark");
+
+    // Tabcontent main COLOR
+    var whiteTabcontent = document.getElementById("Main");
+    whiteTabcontent.classList.add("tabcontentLight");
+    whiteTabcontent.classList.remove("tabcontentDark");
+
+    // Tabcontent backup COLOR
+    var whiteTabcontentBack = document.getElementById("Backup");
+    whiteTabcontentBack.classList.add("tabcontentLight");
+    whiteTabcontentBack.classList.remove("tabcontentDark");
+
+    // Tablinks COLOR
+    var whiteTablinks = document.getElementsByClassName("tablinks");
+    whiteTablinks[0].classList.add("tablinksWhite");
+    whiteTablinks[0].classList.remove("tablinksDark");
+
+    whiteTablinks[1].classList.add("tablinksWhite");
+    whiteTablinks[1].classList.remove("tablinksDark");
+
+    // Crew Oleg COLOR
+    var whiteOleg = document.getElementById("crewMiscOleg");
+    whiteOleg.classList.add("crewMiscOlegLight");
+    whiteOleg.classList.remove("crewMiscOlegDark");
   } else {
+    toggleDarkMode();
+  }
+}
+
+function toggleDarkMode() {
+
+  var body = document.body;
+  body.classList.toggle("darkMode");
+
+  if (document.body.classList.contains("darkMode")) {
+		localStorage.removeItem('light', true);	
+    localStorage.setItem('dark',false);
+
+    
+    localStorage.setItem('dark',true);
+    localStorage.removeItem('light', false);	
+
     // ICONS
     var modeSun = document.getElementById("sun");
     modeSun.classList.remove("hidden");
@@ -70,11 +208,121 @@ function toggleWhiteMode() {
     var darkFooter = document.getElementById("footer");
     darkFooter.classList.add("footer-dark");
     darkFooter.classList.remove("footer-light");
+    
+    // Modal COLOR
+    var darkModal = document.getElementById("modalMode");
+    darkModal.classList.add("modalContentDark");
+    darkModal.classList.remove("modalContentLight");
+
+    // Table Header COLOR
+    var darkTable = document.getElementsByClassName("tableHeader");
+    darkTable[0].classList.add("thDark");
+    darkTable[0].classList.remove("thLight");
+
+    darkTable[1].classList.add("thDark");
+    darkTable[1].classList.remove("thLight");
+
+    // Table Text COLOR
+    var darkText = document.getElementsByClassName("ttDarkLight");
+    darkText[0].classList.add("ttDark");
+    darkText[0].classList.remove("ttLight");
+
+    darkText[1].classList.add("ttDark");
+    darkText[1].classList.remove("ttLight");
+
+    darkText[2].classList.add("ttDark");
+    darkText[2].classList.remove("ttLight");
+
+    darkText[3].classList.add("ttDark");
+    darkText[3].classList.remove("ttLight");
+
+    darkText[4].classList.add("ttDark");
+    darkText[4].classList.remove("ttLight");
+
+    darkText[5].classList.add("ttDark");
+    darkText[5].classList.remove("ttLight");
+
+    darkText[6].classList.add("ttDark");
+    darkText[6].classList.remove("ttLight");
+
+    darkText[7].classList.add("ttDark");
+    darkText[7].classList.remove("ttLight");
+
+    // Table Text lighter COLOR
+    var darkerText = document.getElementsByClassName("ttDarkerLighter");
+    darkerText[0].classList.add("ttDarker");
+    darkerText[0].classList.remove("ttLighter");
+
+    darkerText[1].classList.add("ttDarker");
+    darkerText[1].classList.remove("ttLighter");
+
+    darkerText[2].classList.add("ttDarker");
+    darkerText[2].classList.remove("ttLighter");
+
+    darkerText[3].classList.add("ttDarker");
+    darkerText[3].classList.remove("ttLighter");
+
+    darkerText[4].classList.add("ttDarker");
+    darkerText[4].classList.remove("ttLighter");
+
+    darkerText[5].classList.add("ttDarker");
+    darkerText[5].classList.remove("ttLighter");
+
+    darkerText[6].classList.add("ttDarker");
+    darkerText[6].classList.remove("ttLighter");
+
+    darkerText[7].classList.add("ttDarker");
+    darkerText[7].classList.remove("ttLighter");
 
     // CrewCard COLOR
     var darkCrewCard = document.getElementsByClassName("crewCard");
-    darkCrewCard.classList.add("darkCrew");
-    darkCrewCard.classList.remove("lightCrew");
+    darkCrewCard[0].classList.add("darkCrew");
+    darkCrewCard[0].classList.remove("lightCrew");
+
+    darkCrewCard[1].classList.add("darkCrew");
+    darkCrewCard[1].classList.remove("lightCrew");
+
+    darkCrewCard[2].classList.add("darkCrew");
+    darkCrewCard[2].classList.remove("lightCrew");
+
+    darkCrewCard[3].classList.add("darkCrew");
+    darkCrewCard[3].classList.remove("lightCrew");
+
+    darkCrewCard[4].classList.add("darkCrew");
+    darkCrewCard[4].classList.remove("lightCrew");
+
+    darkCrewCard[5].classList.add("darkCrew");
+    darkCrewCard[5].classList.remove("lightCrew");
+
+    // Tab COLOR
+    var darkTab = document.getElementById("tab");
+    darkTab.classList.remove("tabLight");
+    darkTab.classList.add("tabDark");
+
+    // Tabcontent main COLOR
+    var darkTabcontent = document.getElementById("Main");
+    darkTabcontent.classList.add("tabcontentDark");
+    darkTabcontent.classList.remove("tabcontentLight");
+
+    // Tabcontent backup COLOR
+    var darkTabcontentBack = document.getElementById("Backup");
+    darkTabcontentBack.classList.add("tabcontentDark");
+    darkTabcontentBack.classList.remove("tabcontentLight");
+
+    // Tablinks COLOR
+    var darkTablinks = document.getElementsByClassName("tablinks");
+    darkTablinks[0].classList.add("tablinksDark");
+    darkTablinks[0].classList.remove("tablinksWhite");
+
+    darkTablinks[1].classList.add("tablinksDark");
+    darkTablinks[1].classList.remove("tablinksWhite");
+
+    // Crew Oleg COLOR
+    var darkOleg = document.getElementById("crewMiscOleg");
+    darkOleg.classList.add("crewMiscOlegDark");
+    darkOleg.classList.remove("crewMiscOlegLight");
+    } else {
+    toggleWhiteMode();
   }
 }
 
@@ -108,41 +356,120 @@ document.getElementById("defaultOpen").click();
 // * GSAP ANIMATIONS *
 // *******************
 
-// Textscramble
+// Intro
+let introTl = gsap.timeline({
+  defaults: {
+    duration: 3,
+    ease: "none"
+  }
+});
+
+introTl.set(".navImg", {
+  xPercent: 45,
+  width: "50%"
+})
+.set(".nav-link", {
+  opacity: 0
+}, 0)
+.set(".mainNav", {
+  backgroundColor: "transparent",
+  boxShadow: "none"
+}, 0)
+.set(".modeToggle", {
+  opacity: 0
+}, 0)
+.set(".section", {
+  display: "none"
+}, 0)
+.to(".navImg", {
+  rotate: 360,
+  xPercent: 0,
+  yPercent: 0,
+  width: "2vw",
+  delay: 1,
+  onComplete: textScramble
+})
+
+function textScramble() {
+
+  // Textscramble
 let textTl = gsap.timeline({
   delay: 0,
-  duration: 3,
+  duration: 5,
   ease: "none"
 });
 
-textTl.to(".descriptionP", {
+textTl
+.to(".nav-link", {
+  duration: 2,
+  opacity: 1,
+  scrambleText: {
+    text: "{original}",
+    chars: "upperAndLowerCase",
+    tweenLength: true
+  }
+}, 0)
+.to(".mainNav", {
+  backgroundColor: "#4d4d4d",
+  boxShadow: "0 2px 10px 10px #262626"
+}, 0)
+.to(".modeToggle", {
+  opacity: 1
+}, 0)
+.to(".descriptionP", {
+  duration: 3,
   scrambleText: {
     text: "Watch the Earth from space and learn about the mission of the rocket you own a piece of", 
     chars: "upperAndLowerCase",
     // revealDelay: 0.5,
-    tweenLength: true,
-    newClass: "descriptionP"
+    tweenLength: true
   }
-})
+}, 0)
 .to(".descriptionH1", {
+  duration: 3,
   scrambleText: {
     text: "Gravity", 
     chars: "upperAndLowerCase",
     // revealDelay: 0.5,
     tweenLength: true
   }
-}, "<")
+}, 0)
 .set(".descriptionH6", {
   opacity: 1
-})
+}, ">")
 .to(".descriptionH6", {
+  duration: 3,
   scrambleText: {
     text: "Mach 33", 
-  chars: "upperAndLowerCase",
-  // revealDelay: 0.5,
-  tweenLength: true
+    chars: "upperAndLowerCase",
+    // revealDelay: 0.5,
+    tweenLength: true
   }
-});
+}, ">")
+.to(".scroll-down", {
+  duration: 3,
+  scrambleText: {
+    text: "Scroll down", 
+    chars: "upperAndLowerCase",
+    // revealDelay: 0.5,
+    tweenLength: true
+  }
+}, "<")
+.set(".arrow", {
+  opacity: 1,
+  onComplete: setMain
+}, ">-=0.6");
+
+}
+
+function setMain() {
+  gsap.set(".section", {
+    display: "block",
+    onComplete: gsapFunc
+  });
+}
+
+function gsapFunc() {
 
 // Arrow Bounce
 let arrowTl = gsap.timeline({
@@ -166,6 +493,9 @@ scrollTl.to(".scroll-down", {
   .to(".backgroundDiv", {
     yPercent: -100,
   }, "<")
+  .to(".fa-arrow-down", {
+    yPercent: -1500,
+  }, "<")
 
   .from(
     ".section1",
@@ -174,33 +504,54 @@ scrollTl.to(".scroll-down", {
     },
     "<"
   )
+  .to(".nav-link1", {
+    color: "#278bd8"
+  }, "<-=0.5")
   
   .from(".section1", { duration: 2 })
 
   .from(".section1", {
     opacity: 1,
   })
+  .to(".nav-link1", {
+    color: "#d87427"
+  }, "<-=0.5")
   .from(".section2", {
     opacity: 0,
   })
+  .to(".nav-link2", {
+    color: "#278bd8"
+  }, "<-=0.5")
 
   .from(".section1", { duration: 2 })
 
   .from(".section2", {
     opacity: 1,
   })
+  .to(".nav-link2", {
+    color: "#d87427"
+  }, "<-=0.5")
   .from(".section3", {
     opacity: 0,
   })
+  .to(".nav-link3", {
+    color: "#278bd8"
+  }, "<-=0.5")
 
   .from(".section1", { duration: 2 })
 
   .from(".section3", {
     opacity: 1,
   })
+  .to(".nav-link3", {
+    color: "#d87427"
+  }, "<-=0.5")
   .from(".section4", {
     opacity: 0,
   })
+  .to(".nav-link4", {
+    color: "#278bd8"
+  }, "<-=0.5")
 
   .from(".section1", { duration: 2 });
 
@@ -258,7 +609,13 @@ rocketTextTl.from(".imageMission", {
 }, "0")
 .from(".rocketLi", {
   xPercent: -10
-}, "0");
+}, "0")
+.from(".factPtext", {
+  xPercent: -10
+}, "0")
+.from("#myModalBtn", {
+  xPercent: -10
+}, 0);
 
 ScrollTrigger.create({
   animation: rocketTextTl,
@@ -269,7 +626,11 @@ ScrollTrigger.create({
   // markers: true,
 });
 
-// GSDevTools.create({animation: textTl});
+}
+
+// MotionPathHelper.create(".rocketSVG")
+
+// GSDevTools.create({animation: introTl});
 
 
 // ***************************************
@@ -285,3 +646,127 @@ const animateProgressBar = () => {
 }
 
 window.addEventListener('scroll', animateProgressBar);
+
+
+// *********
+// * Modal *
+// *********
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myModalBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  // modal.style.display = "block";
+  gsap.from(".w3modal", {
+    // duration: 3,
+    y: 300
+  })
+  gsap.to(".w3modal", {
+    // duration: 3,
+    display: "block",
+  })
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  // modal.style.display = "none";
+  gsap.from(".w3modal", {
+    // duration: 3,
+    y: -300
+  })
+  gsap.to(".w3modal", {
+    // duration: 3,
+    display: "none",
+  })
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    // modal.style.display = "none";
+    gsap.from(".w3modal", {
+      // duration: 3,
+      y: -300
+    })
+    gsap.to(".w3modal", {
+      // duration: 3,
+      display: "none",
+    })
+  }
+}
+
+
+// ****************
+// * Cookie Modal *
+// ****************
+var getLocalCookieVar = localStorage.getItem('cookie');
+if(getLocalCookieVar == "true") {
+  console.log("consent");
+
+}else {
+  console.log("no consent");
+  gsap.to(".cookieModal", {
+    y: -100
+  })
+  gsap.to(".cookieModal", {
+    display: "block",
+  })
+}
+
+// Get the button that opens the modal
+var cookieBtn = document.getElementById("cookieModalBtn");
+
+// When the user clicks the button to accept 
+cookieBtn.onclick = function() {
+  localStorage.setItem('cookie',true);
+
+  gsap.to(".cookieModal", {
+    // duration: 3,
+    y: 100
+  })
+  gsap.to(".cookieModal", {
+    // duration: 3,
+    display: "none",
+  })
+}
+
+// // Get the modal
+// var cookieModal = document.getElementById("cookieModal");
+
+// // Get the <span> element that closes the modal
+// var cookieSpan = document.getElementsByClassName("cookieClose")[0];
+
+// // When the user clicks on <span> (x), close the modal
+// cookieSpan.onclick = function() {
+//   // modal.style.display = "none";
+//   gsap.from(".cookieModal", {
+//     // duration: 3,
+//     y: -100
+//   })
+//   gsap.to(".cookieModal", {
+//     // duration: 3,
+//     display: "none",
+//   })
+// }
+
+// // When the user clicks anywhere outside of the modal, close it
+// window.onclick = function(event) {
+//   if (event.target == cookieModal) {
+//     // modal.style.display = "none";
+//     gsap.from(".cookieModal", {
+//       // duration: 3,
+//       y: -100
+//     })
+//     gsap.to(".cookieModal", {
+//       // duration: 3,
+//       display: "none",
+//     })
+//   }
+// }
+
