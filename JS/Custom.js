@@ -663,9 +663,9 @@ var span = document.getElementsByClassName("close")[0];
 // When the user clicks the button, open the modal 
 btn.onclick = function() {
   // modal.style.display = "block";
-  gsap.from(".w3modal", {
+  gsap.to(".w3modal", {
     // duration: 3,
-    y: 300
+    y: -300
   })
   gsap.to(".w3modal", {
     // duration: 3,
@@ -676,9 +676,9 @@ btn.onclick = function() {
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
   // modal.style.display = "none";
-  gsap.from(".w3modal", {
+  gsap.to(".w3modal", {
     // duration: 3,
-    y: -300
+    y: 300
   })
   gsap.to(".w3modal", {
     // duration: 3,
@@ -690,9 +690,9 @@ span.onclick = function() {
 window.onclick = function(event) {
   if (event.target == modal) {
     // modal.style.display = "none";
-    gsap.from(".w3modal", {
+    gsap.to(".w3modal", {
       // duration: 3,
-      y: -300
+      y: 300
     })
     gsap.to(".w3modal", {
       // duration: 3,
@@ -735,38 +735,3 @@ cookieBtn.onclick = function() {
     display: "none",
   })
 }
-
-// // Get the modal
-// var cookieModal = document.getElementById("cookieModal");
-
-// // Get the <span> element that closes the modal
-// var cookieSpan = document.getElementsByClassName("cookieClose")[0];
-
-// // When the user clicks on <span> (x), close the modal
-// cookieSpan.onclick = function() {
-//   // modal.style.display = "none";
-//   gsap.from(".cookieModal", {
-//     // duration: 3,
-//     y: -100
-//   })
-//   gsap.to(".cookieModal", {
-//     // duration: 3,
-//     display: "none",
-//   })
-// }
-
-// // When the user clicks anywhere outside of the modal, close it
-// window.onclick = function(event) {
-//   if (event.target == cookieModal) {
-//     // modal.style.display = "none";
-//     gsap.from(".cookieModal", {
-//       // duration: 3,
-//       y: -100
-//     })
-//     gsap.to(".cookieModal", {
-//       // duration: 3,
-//       display: "none",
-//     })
-//   }
-// }
-

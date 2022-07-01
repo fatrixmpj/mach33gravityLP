@@ -668,6 +668,10 @@ main {
   overflow: auto; /* Enable scroll if needed */
 }
 
+#myModal {
+	margin-top: 36vh;
+}
+
 .cookieModal {
 	z-index: 99999999;
 	margin-top: 10vh;
