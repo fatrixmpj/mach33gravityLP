@@ -102,11 +102,11 @@ body {
 }
 
 .lightNav {
-  background-color: #d87427 !important;
+  background-color: #d87427 ;
 }
 
 .lightNav a {
-  color: #000;
+  color: #000 !important;
 }
 
 .lightNav a:hover {
@@ -124,14 +124,19 @@ body {
   margin-left: auto;
   margin-right: auto;
   margin-top: 5%;
-  height: 50.5vh;
+  height: 23.5vh;
   overflow: hidden;
 }
 
 .lightCrew {
-  border: 1px solid #af3939;
-  background-color: #af3939;
+  border: 1px solid #d87427;
+  background-color: #d87427;
   box-shadow: 5px 8px 8px #262626;
+  color: #000;
+}
+
+.lightCrew a {
+  color: #000;
 }
 
 .darkCrew {
@@ -327,6 +332,7 @@ main {
 .btn-outline-light:hover {
   border: 1px solid #278bd8 !important;
   background-color: #278bd8 !important;
+  color: #d87427 !important;
 }
 
 .btn-outline-dark {
@@ -336,6 +342,7 @@ main {
 .btn-outline-dark:hover {
   border: 1px solid #d87427 !important;
   background-color: #d87427 !important;
+  color: #278bd8 !important;
 }
 
 .navBrandHoverDark:hover {
@@ -405,6 +412,7 @@ main {
   border-top: none;
   height: 90%;
   animation: fadeEffect 1s; /* Fading effect takes 1 second */
+  height: 72vh;
 }
 
 .tabcontentDark {
@@ -802,4 +810,166 @@ main {
 .crewImgOleg {
 	height: auto;
 	width: 14.9vw;
+}
+
+.crewSVG {
+	height: 70vw;
+	rotate: -90deg;
+	position: absolute;
+	bottom: -25vh;
+	left: 11vw;
+	z-index: 4;
+}
+
+.crewSVGpath {
+	fill: url(#crewSVGgradient);
+	stroke: #000;
+	stroke-width: 1px;
+	stroke-dasharray: none;
+}
+
+.cardSere {
+	margin-left: -20vw;
+	margin-top: 24vh;
+	z-index: 1;
+	position: absolute;
+}
+
+.nameSere {
+	position: absolute;
+	margin-top: 23vh;
+	margin-left: -18vw;
+	z-index: 5;
+}
+
+.miscSere {
+	position: absolute;
+	z-index: 5;
+	margin-top: 45vh;
+	margin-left: -18.5vw;
+}
+
+.cardAlex {
+	margin-top: 25vh;
+	margin-left: 0vw;
+	z-index: 2;
+	position: absolute;
+}
+
+.nameAlex {
+	position: absolute;
+	margin-top: 23vh;
+	margin-left: 1.5vw;
+	z-index: 5;
+}
+
+.miscAlex {
+	position: absolute;
+	z-index: 5;
+	margin-top: 45vh;
+	margin-left: 1.5vw;
+}
+
+.cardSerg {
+	margin-left: 20vw;
+	margin-top: 24vh;
+	z-index: 3;
+	position: absolute;
+}
+
+.nameSerg {
+	margin-left: 21.5vw;
+	margin-top: 23vh;
+	position: absolute;
+	z-index: 5;
+}
+
+.miscSerg {
+	position: absolute;
+	z-index: 5;
+	margin-top: 45vh;
+	margin-left: 21.5vw;
+}
+
+/* Backup Crew */
+
+.crewBackupSVGpath {
+	fill: url(#crewBackupSVGgradient);
+	stroke: #000;
+	stroke-width: 1px;
+	stroke-dasharray: none;
+}
+
+.cardAnne {
+	margin-left: -19vw;
+	margin-top: 23vh;
+	z-index: 1;
+	position: absolute;
+}
+
+.nameAnne {
+	position: absolute;
+	margin-top: 23vh;
+	margin-left: -18.5vw;
+	z-index: 5;
+}
+
+.miscAnne {
+	position: absolute;
+	z-index: 5;
+	margin-top: 45vh;
+	margin-left: -18.5vw;
+}
+
+.cardDavid {
+	margin-top: 24vh;
+	margin-left: 4vw;
+	z-index: 3;
+	position: absolute;
+	width: 12vw;
+}
+
+.nameDavid {
+	position: absolute;
+	margin-top: 23vh;
+	margin-left: 1.5vw;
+	z-index: 5;
+}
+
+.miscDavid {
+	position: absolute;
+	z-index: 5;
+	margin-top: 45vh;
+	margin-left: 1.5vw;
+}
+
+.imgDavid {
+	margin-left: -2vw;
+	height: 35vh;
+}
+
+.cardOleg {
+	margin-left: 24vw;
+	margin-top: 24vh;
+	z-index: 3;
+	position: absolute;
+}
+
+.nameOleg {
+	margin-left: 21.5vw;
+	margin-top: 23vh;
+	position: absolute;
+	z-index: 5;
+}
+
+.MiscOleg {
+	position: absolute;
+	z-index: 5;
+	margin-bottom: 26.5vh;
+	margin-left: 21.5vw;
+}
+
+.ImgOleg {
+	width: 10vw;
+	height: auto;
 }

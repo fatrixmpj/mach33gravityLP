@@ -70,9 +70,13 @@
               </li>
             </ul>
 
-            <a onclick="toggleWhiteMode()" class="btn btn-outline-dark modeToggle" id="btn">
+            <a onclick="toggleWhiteMode()" class="btn btn-outline-dark modeToggle" id="btnSun">
+              <!-- <i class="fa-solid fa-moon hidden" id="moon"></i> -->
               <i class="fa-solid fa-sun" id="sun"></i>
-              <i class="fa-solid fa-moon hidden" id="moon"></i>
+            </a>
+            <a onclick="toggleDarkMode()" class="btn btn-outline-dark modeToggle" id="btnMoon">
+              <i class="fa-solid fa-moon" id="moon"></i>
+              <!-- <i class="fa-solid fa-sun" id="sun"></i> -->
             </a>
           </div>
         </div>
@@ -94,41 +98,41 @@
             <table width="100%" cellspacing="0" cellpadding="3" border="0">
               <tbody>
                 <tr>
-                  <td class="tableHeader thDark" >Milestone</td>
-                  <td class="tableHeader thDark" >Elapsed time</td>
+                  <td class="tableHeader thDark">Milestone</td>
+                  <td class="tableHeader thDark">Elapsed time</td>
                 </tr>
                 <tr>
-                  <td class="tableText ttDark ttDarkLight" ><font>Liftoff</font></td>
-                  <td class="tableText ttDark ttDarkLight" ><font>0</font></td>
+                  <td class="tableText ttDark ttDarkLight"><font>Liftoff</font></td>
+                  <td class="tableText ttDark ttDarkLight"><font>0</font></td>
                 </tr>
                 <tr>
-                  <td class="tableText ttDarker ttDarkerLighter" >SAS (Emergency Escape System) separation</td>
-                  <td class="tableText ttDarker ttDarkerLighter" >114.6 seconds</td>
+                  <td class="tableText ttDarker ttDarkerLighter">SAS (Emergency Escape System) separation</td>
+                  <td class="tableText ttDarker ttDarkerLighter">114.6 seconds</td>
                 </tr>
                 <tr>
-                  <td class="tableText  ttDark ttDarkLight" ><font>Stage I separation</font></td>
-                  <td class="tableText  ttDark ttDarkLight" ><font>117.8 seconds</font></td>
+                  <td class="tableText ttDark ttDarkLight"><font>Stage I separation</font></td>
+                  <td class="tableText ttDark ttDarkLight"><font>117.8 seconds</font></td>
                 </tr>
                 <tr>
-                  <td class="tableText  ttDarker ttDarkerLighter" ><font>Payload fairing separation</font></td>
-                  <td class="tableText  ttDarker ttDarkerLighter" ><font>157.48 seconds</font></td>
+                  <td class="tableText ttDarker ttDarkerLighter"><font>Payload fairing separation</font></td>
+                  <td class="tableText ttDarker ttDarkerLighter"><font>157.48 seconds</font></td>
                 </tr>
 
                 <tr>
-                  <td class="tableText  ttDark ttDarkLight" >Stage II separation</td>
-                  <td class="tableText  ttDark ttDarkLight" >287.30 seconds</td>
+                  <td class="tableText ttDark ttDarkLight">Stage II separation</td>
+                  <td class="tableText ttDark ttDarkLight">287.30 seconds</td>
                 </tr>
                 <tr>
-                  <td class="tableText  ttDarker ttDarkerLighter" >Stage III tail section separation</td>
-                  <td class="tableText  ttDarker ttDarkerLighter" >297.30 seconds</td>
+                  <td class="tableText ttDarker ttDarkerLighter">Stage III tail section separation</td>
+                  <td class="tableText ttDarker ttDarkerLighter">297.30 seconds</td>
                 </tr>
                 <tr>
-                  <td class="tableText  ttDark ttDarkLight" >Stage III main engine cutoff</td>
-                  <td class="tableText  ttDark ttDarkLight" >524.96 seconds</td>
+                  <td class="tableText ttDark ttDarkLight">Stage III main engine cutoff</td>
+                  <td class="tableText ttDark ttDarkLight">524.96 seconds</td>
                 </tr>
                 <tr>
-                  <td class="tableText  ttDarker ttDarkerLighter" >Stage III separation</td>
-                  <td class="tableText  ttDarker ttDarkerLighter" >528.26 seconds</td>
+                  <td class="tableText ttDarker ttDarkerLighter">Stage III separation</td>
+                  <td class="tableText ttDarker ttDarkerLighter">528.26 seconds</td>
                 </tr>
               </tbody>
             </table>
@@ -144,9 +148,7 @@
           <div class="cookieModalHeader">
             <h2>This website uses cookies</h2>
           </div>
-          <div class="cookieModalBody">
-            We use cookies to personalize the website and user experience for you.
-          </div>
+          <div class="cookieModalBody">We use cookies to personalize the website and user experience for you.</div>
           <div class="cookieModalFooter">
             <button id="cookieModalBtn" class="btn btn-outline-info">Accept</button>
           </div>
@@ -281,58 +283,117 @@
 
               <!-- Tab content 1 -->
               <div id="Main" class="tabcontent tabcontentDark">
+                <svg class="crewSVG" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background: new 0 0 512 512" xml:space="preserve">
+                  <defs>
+                    <radialGradient id="crewSVGgradient" cx="0.5" cy="0.5" r="0.4" fx="0.75" fy="0.75" spreadMethod="reflect">
+                      <stop offset="0%" stop-color="#1a1a1a" />
+                      <stop offset="100%" stop-color="#404040" />
+                    </radialGradient>
+                  </defs>
+
+                  <g>
+                    <g>
+                      <path
+                        class="crewSVGpath"
+                        d="M336.496,307.984c-0.666-0.316-1.357-0.538-2.048-0.674c20.595-182.329-41.029-271.982-72.259-304.774
+                        c-3.226-3.38-9.133-3.38-12.359,0c-31.239,32.792-92.871,122.446-72.276,304.774c-0.691,0.137-1.383,0.358-2.048,0.674
+                        c-66.788,31.853-47.797,97.651-29.446,161.281c2.68,9.278,5.369,18.598,7.801,27.833c0.905,3.44,3.841,5.949,7.374,6.316
+                        c3.585,0.367,6.922-1.494,8.518-4.669l29.37-58.739l-11.258,61.931c-0.743,4.08,1.562,8.108,5.454,9.534
+                        c0.964,0.358,1.955,0.529,2.945,0.529c2.979,0,5.83-1.562,7.391-4.268c4.191-7.246,16.114-21.953,25.734-21.568
+                        c6.265,0.316,12.956,7.699,18.837,20.8c1.383,3.064,4.43,5.036,7.784,5.036c3.354,0,6.401-1.972,7.784-5.036
+                        c5.881-13.084,12.564-20.467,18.829-20.8c10.268-0.555,22.388,15.807,25.759,21.577c2.074,3.576,6.435,5.147,10.328,3.721
+                        c3.892-1.434,6.188-5.454,5.445-9.525l-11.258-61.931l29.37,58.739c1.596,3.184,4.976,5.036,8.518,4.669
+                        c3.534-0.367,6.47-2.876,7.374-6.316c2.433-9.244,5.121-18.555,7.801-27.833C384.293,405.635,403.275,339.837,336.496,307.984z
+                         M256,341.296c-18.829,0-34.141-15.312-34.141-34.141s15.312-34.141,34.141-34.141s34.141,15.312,34.141,34.141
+                        S274.82,341.296,256,341.296z M256,255.945c-18.829,0-34.141-15.312-34.141-34.141s15.312-34.141,34.141-34.141
+                        s34.141,15.312,34.141,34.141S274.82,255.945,256,255.945z M256,170.593c-18.829,0-34.141-15.312-34.141-34.141
+                        s15.312-34.141,34.141-34.141s34.141,15.312,34.141,34.141S274.82,170.593,256,170.593z"
+                      />
+                    </g>
+                  </g>
+                </svg>
                 <div class="row">
                   <div class="col-4">
-                    <div id="crewCard" class="crewCard darkCrew">
-                      <a href="https://en.wikipedia.org/wiki/Sergey_Prokopyev_(cosmonaut)" target="_blank" class="crewName crewInside">Sergey Prokopyev</a>
-                      <img src="Resources\Images\Sergey_Prokopyev_-_NASA_portrait.jpg" class="crewImg crewInside" />
-                      <p class="crewMisc crewInside">Commander, RSA</p>
+                    <a href="https://en.wikipedia.org/wiki/Sergey_Prokopyev_(cosmonaut)" target="_blank" class="crewName crewInside nameSerg">Sergey Prokopyev</a>
+                    <div id="crewCard" class="crewCard darkCrew cardSerg">
+                      <img src="Resources\Images\Sergey_Prokopyev_-_NASA_portrait.jpg" class="crewImg crewInside imgSerg" />
                     </div>
+                    <p class="crewMisc crewInside miscSerg">Commander, RSA</p>
                   </div>
 
                   <div class="col-4">
-                    <div id="crewCard" class="crewCard darkCrew">
-                      <a href="https://en.wikipedia.org/wiki/Alexander_Gerst" target="_blank" class="crewName crewInside">Alexander Gerst</a>
-                      <img src="Resources\Images\Alexander_Gerst,_official_portrait_in_2017.jpg" class="crewImg crewInside" />
-                      <p class="crewMisc crewInside">Flight Engineer 1, ESA</p>
+                    <a href="https://en.wikipedia.org/wiki/Alexander_Gerst" target="_blank" class="crewName crewInside nameAlex">Alexander Gerst</a>
+                    <div id="crewCard" class="crewCard darkCrew cardAlex">
+                      <img src="Resources\Images\Alexander_Gerst,_official_portrait_in_2017.jpg" class="crewImg crewInside imgAlex" />
                     </div>
+                    <p class="crewMisc crewInside miscAlex">Flight Engineer 1, ESA</p>
                   </div>
 
                   <div class="col-4">
-                    <div id="crewCard" class="crewCard darkCrew">
-                      <a href="https://en.wikipedia.org/wiki/Serena_Au%C3%B1%C3%B3n-Chancellor" target="_blank" class="crewName crewInside">Serena M. Auñón-Chancellor</a>
-                      <img src="Resources\Images\Serena_M._Aunon,_NASA_astronaut_candidate.jpg" class="crewImg crewInside" />
-                      <p class="crewMisc crewInside">Flight Engineer 2, NASA</p>
+                    <a href="https://en.wikipedia.org/wiki/Serena_Au%C3%B1%C3%B3n-Chancellor" target="_blank" class="crewName crewInside nameSere">Serena M. Auñón-Chancellor</a>
+                    <div id="crewCard" class="crewCard darkCrew cardSere">
+                      <img src="Resources\Images\Serena_M._Aunon,_NASA_astronaut_candidate.jpg" class="crewImg crewInside imagSere" />
                     </div>
+                    <p class="crewMisc crewInside miscSere">Flight Engineer 2, NASA</p>
                   </div>
                 </div>
               </div>
 
               <!-- Tab content 2 -->
               <div id="Backup" class="tabcontent tabcontentDark">
+                <svg class="crewSVG" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background: new 0 0 512 512" xml:space="preserve">
+                  <defs>
+                    <radialGradient id="crewBackupSVGgradient" cx="0.5" cy="0.5" r="0.4" fx="0.75" fy="0.75" spreadMethod="reflect">
+                      <stop offset="0%" stop-color="#1a1a1a" />
+                      <stop offset="100%" stop-color="#404040" />
+                    </radialGradient>
+                  </defs>
+
+                  <g>
+                    <g>
+                      <path
+                        class="crewBackupSVGpath"
+                        d="M336.496,307.984c-0.666-0.316-1.357-0.538-2.048-0.674c20.595-182.329-41.029-271.982-72.259-304.774
+                        c-3.226-3.38-9.133-3.38-12.359,0c-31.239,32.792-92.871,122.446-72.276,304.774c-0.691,0.137-1.383,0.358-2.048,0.674
+                        c-66.788,31.853-47.797,97.651-29.446,161.281c2.68,9.278,5.369,18.598,7.801,27.833c0.905,3.44,3.841,5.949,7.374,6.316
+                        c3.585,0.367,6.922-1.494,8.518-4.669l29.37-58.739l-11.258,61.931c-0.743,4.08,1.562,8.108,5.454,9.534
+                        c0.964,0.358,1.955,0.529,2.945,0.529c2.979,0,5.83-1.562,7.391-4.268c4.191-7.246,16.114-21.953,25.734-21.568
+                        c6.265,0.316,12.956,7.699,18.837,20.8c1.383,3.064,4.43,5.036,7.784,5.036c3.354,0,6.401-1.972,7.784-5.036
+                        c5.881-13.084,12.564-20.467,18.829-20.8c10.268-0.555,22.388,15.807,25.759,21.577c2.074,3.576,6.435,5.147,10.328,3.721
+                        c3.892-1.434,6.188-5.454,5.445-9.525l-11.258-61.931l29.37,58.739c1.596,3.184,4.976,5.036,8.518,4.669
+                        c3.534-0.367,6.47-2.876,7.374-6.316c2.433-9.244,5.121-18.555,7.801-27.833C384.293,405.635,403.275,339.837,336.496,307.984z
+                         M256,341.296c-18.829,0-34.141-15.312-34.141-34.141s15.312-34.141,34.141-34.141s34.141,15.312,34.141,34.141
+                        S274.82,341.296,256,341.296z M256,255.945c-18.829,0-34.141-15.312-34.141-34.141s15.312-34.141,34.141-34.141
+                        s34.141,15.312,34.141,34.141S274.82,255.945,256,255.945z M256,170.593c-18.829,0-34.141-15.312-34.141-34.141
+                        s15.312-34.141,34.141-34.141s34.141,15.312,34.141,34.141S274.82,170.593,256,170.593z"
+                      />
+                    </g>
+                  </g>
+                </svg>
+
                 <div class="row">
                   <div class="col-4">
-                    <div id="crewCard" class="crewCard darkCrew">
-                      <a href="https://en.wikipedia.org/wiki/Oleg_Kononenko" target="_blank" class="crewName crewInside">Oleg D. Kononenko</a>
-                      <img src="Resources\Images\kononenko_oleg_d.jpg" class="crewImg crewInside crewImgOleg" />
-                      <p id="crewMiscOleg" class="crewMisc crewInside crewMiscOleg crewMiscOlegDark">Commander, RSA</p>
+                    <a href="https://en.wikipedia.org/wiki/Oleg_Kononenko" target="_blank" class="crewName crewInside nameOleg">Oleg D. Kononenko</a>
+                    <div id="crewCard" class="crewCard darkCrew cardOleg">
+                      <img src="Resources\Images\kononenko_oleg_d.jpg" class="crewImg crewInside ImgOleg" />
                     </div>
+                    <p id="crewMiscOleg" class="crewMisc crewInside crewMiscOleg MiscOleg">Commander, RSA</p>
                   </div>
 
                   <div class="col-4">
-                    <div id="crewCard" class="crewCard darkCrew">
-                      <a href="https://en.wikipedia.org/wiki/David_Saint-Jacques" target="_blank" class="crewName crewInside">David Saint-Jacques</a>
-                      <img src="Resources\Images\David_Saint-Jacques_official_portrait.jpg" class="crewImg crewInside" />
-                      <p class="crewMisc crewInside">Flight Engineer 1, CSA</p>
+                    <a href="https://en.wikipedia.org/wiki/David_Saint-Jacques" target="_blank" class="crewName crewInside nameDavid">David Saint-Jacques</a>
+                    <div id="crewCard" class="crewCard darkCrew cardDavid">
+                      <img src="Resources\Images\David_Saint-Jacques_official_portrait.jpg" class="crewImg crewInside imgDavid" />
                     </div>
+                    <p class="crewMisc crewInside miscDavid">Flight Engineer 1, CSA</p>
                   </div>
 
                   <div class="col-4">
-                    <div id="crewCard" class="crewCard darkCrew">
-                      <a href="https://en.wikipedia.org/wiki/Anne_McClain" target="_blank" class="crewName crewInside">Anne C. McClain</a>
-                      <img src="Resources\Images\Anne_C._McClain_portrait.jpg" class="crewImg crewInside" />
-                      <p class="crewMisc crewInside">Flight Engineer 2, NASA</p>
+                    <a href="https://en.wikipedia.org/wiki/Anne_McClain" target="_blank" class="crewName crewInside nameAnne">Anne C. McClain</a>
+                    <div id="crewCard" class="crewCard darkCrew cardAnne">
+                      <img src="Resources\Images\Anne_C._McClain_portrait.jpg" class="crewImg crewInside imgAnne" />
                     </div>
+                    <p class="crewMisc crewInside miscAnne">Flight Engineer 2, NASA</p>
                   </div>
                 </div>
               </div>

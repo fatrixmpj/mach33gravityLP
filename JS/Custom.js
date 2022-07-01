@@ -10,7 +10,7 @@ if(getLocalDarkVar == "true") {
 
 // FIXME: Fix toggles
 function toggleWhiteMode() {
-    var body = document.body;
+  var body = document.body;
   body.classList.toggle("whiteMode");
 
   if (document.body.classList.contains("whiteMode")) {
@@ -18,10 +18,10 @@ function toggleWhiteMode() {
     localStorage.setItem('dark',false);
 
     // ICONS
-    var modeSun = document.getElementById("sun");
+    var modeSun = document.getElementById("btnSun");
     modeSun.classList.add("hidden");
 
-    var modeMoon = document.getElementById("moon");
+    var modeMoon = document.getElementById("btnMoon");
     modeMoon.classList.remove("hidden");
 
     // NAV COLOR
@@ -38,8 +38,13 @@ function toggleWhiteMode() {
     whiteProgress.classList.add("progress-bar-light");
     whiteProgress.classList.remove("progress-bar-dark");
 
-    // BUTTON COLOR
-    var whiteBtn = document.getElementById("btn");
+    // BUTTON Sun COLOR
+    var whiteBtn = document.getElementById("btnSun");
+    whiteBtn.classList.add("btn-outline-light");
+    whiteBtn.classList.remove("btn-outline-dark");
+
+    // BUTTON Moon COLOR
+    var whiteBtn = document.getElementById("btnMoon");
     whiteBtn.classList.add("btn-outline-light");
     whiteBtn.classList.remove("btn-outline-dark");
 
@@ -113,26 +118,6 @@ function toggleWhiteMode() {
     whiterText[7].classList.add("ttLighter");
     whiterText[7].classList.remove("ttDarker");
 
-    // CrewCard COLOR
-    var whiteCrewCard = document.getElementsByClassName("crewCard");
-    whiteCrewCard[0].classList.add("lightCrew");
-    whiteCrewCard[0].classList.remove("darkCrew");
-
-    whiteCrewCard[1].classList.add("lightCrew");
-    whiteCrewCard[1].classList.remove("darkCrew");
-
-    whiteCrewCard[2].classList.add("lightCrew");
-    whiteCrewCard[2].classList.remove("darkCrew");
-
-    whiteCrewCard[3].classList.add("lightCrew");
-    whiteCrewCard[3].classList.remove("darkCrew");
-
-    whiteCrewCard[4].classList.add("lightCrew");
-    whiteCrewCard[4].classList.remove("darkCrew");
-
-    whiteCrewCard[5].classList.add("lightCrew");
-    whiteCrewCard[5].classList.remove("darkCrew");
-
     // Tab COLOR
     var whiteTab = document.getElementById("tab");
     whiteTab.classList.add("tabLight");
@@ -155,11 +140,6 @@ function toggleWhiteMode() {
 
     whiteTablinks[1].classList.add("tablinksWhite");
     whiteTablinks[1].classList.remove("tablinksDark");
-
-    // Crew Oleg COLOR
-    var whiteOleg = document.getElementById("crewMiscOleg");
-    whiteOleg.classList.add("crewMiscOlegLight");
-    whiteOleg.classList.remove("crewMiscOlegDark");
   } else {
     toggleDarkMode();
   }
@@ -179,10 +159,10 @@ function toggleDarkMode() {
     localStorage.removeItem('light', false);	
 
     // ICONS
-    var modeSun = document.getElementById("sun");
+    var modeSun = document.getElementById("btnSun");
     modeSun.classList.remove("hidden");
 
-    var modeMoon = document.getElementById("moon");
+    var modeMoon = document.getElementById("btnMoon");
     modeMoon.classList.add("hidden");
 
     // NAV COLOR
@@ -199,8 +179,13 @@ function toggleDarkMode() {
     darkProgress.classList.add("progress-bar-dark");
     darkProgress.classList.remove("progress-bar-light");
 
-    // BUTTON COLOR
-    var darkBtn = document.getElementById("btn");
+    // BUTTON Sun COLOR
+    var darkBtn = document.getElementById("btnSun");
+    darkBtn.classList.add("btn-outline-dark");
+    darkBtn.classList.remove("btn-outline-light");
+
+    // BUTTON Moon COLOR
+    var darkBtn = document.getElementById("btnMoon");
     darkBtn.classList.add("btn-outline-dark");
     darkBtn.classList.remove("btn-outline-light");
 
@@ -274,26 +259,6 @@ function toggleDarkMode() {
     darkerText[7].classList.add("ttDarker");
     darkerText[7].classList.remove("ttLighter");
 
-    // CrewCard COLOR
-    var darkCrewCard = document.getElementsByClassName("crewCard");
-    darkCrewCard[0].classList.add("darkCrew");
-    darkCrewCard[0].classList.remove("lightCrew");
-
-    darkCrewCard[1].classList.add("darkCrew");
-    darkCrewCard[1].classList.remove("lightCrew");
-
-    darkCrewCard[2].classList.add("darkCrew");
-    darkCrewCard[2].classList.remove("lightCrew");
-
-    darkCrewCard[3].classList.add("darkCrew");
-    darkCrewCard[3].classList.remove("lightCrew");
-
-    darkCrewCard[4].classList.add("darkCrew");
-    darkCrewCard[4].classList.remove("lightCrew");
-
-    darkCrewCard[5].classList.add("darkCrew");
-    darkCrewCard[5].classList.remove("lightCrew");
-
     // Tab COLOR
     var darkTab = document.getElementById("tab");
     darkTab.classList.remove("tabLight");
@@ -316,11 +281,6 @@ function toggleDarkMode() {
 
     darkTablinks[1].classList.add("tablinksDark");
     darkTablinks[1].classList.remove("tablinksWhite");
-
-    // Crew Oleg COLOR
-    var darkOleg = document.getElementById("crewMiscOleg");
-    darkOleg.classList.add("crewMiscOlegDark");
-    darkOleg.classList.remove("crewMiscOlegLight");
     } else {
     toggleWhiteMode();
   }
@@ -371,10 +331,10 @@ introTl.set(".navImg", {
 .set(".nav-link", {
   opacity: 0
 }, 0)
-.set(".mainNav", {
-  backgroundColor: "transparent",
-  boxShadow: "none"
-}, 0)
+// .set(".mainNav", {
+//   backgroundColor: "transparent",
+//   boxShadow: "none"
+// }, 0)
 .set(".modeToggle", {
   opacity: 0
 }, 0)
@@ -409,10 +369,10 @@ textTl
     tweenLength: true
   }
 }, 0)
-.to(".mainNav", {
-  backgroundColor: "#4d4d4d",
-  boxShadow: "0 2px 10px 10px #262626"
-}, 0)
+// .to(".mainNav", {
+//   backgroundColor: "#4d4d4d",
+//   boxShadow: "0 2px 10px 10px #262626"
+// }, 0)
 .to(".modeToggle", {
   opacity: 1
 }, 0)
