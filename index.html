@@ -29,7 +29,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
   </head>
 
-  <body class="body">
+  <body id="mainBody" class="body">
     <!-- <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 512 512" class="rocketSVG">
       <defs>
         <linearGradient id="grad2" x1="0%" y1="0%" x2="0%" y2="100%">
@@ -275,14 +275,24 @@
             <div class="col-12">
               <h2>Crew</h2>
 
-              <!-- Tab links -->
-              <div class="tab tabDark" id="tab">
-                <button class="tablinks tablinksDark" onclick="openCity(event, 'Main')" id="defaultOpen">Main</button>
-                <button class="tablinks tablinksDark" onclick="openCity(event, 'Backup')">Backup</button>
-              </div>
+              <a class="testBtn btn-outline-dark mainBtn hidden" id="mainBtn" onclick="mainCrew()">Show main crew</a>
 
-              <!-- Tab content 1 -->
-              <div id="Main" class="tabcontent tabcontentDark">
+              <a class="testBtn btn-outline-dark backupBtn" id="backupBtn" onclick="backupCrew()">Show backup crew</a>
+
+              <div id="main" class="tabcontentDark testTab">
+
+                <div class="flame">
+                  <div class="lottieFlame">
+                    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                    <lottie-player class="flamePlayer flame1Player" src="https://assets5.lottiefiles.com/packages/lf20_uletvhke.json" background="transparent" speed="1" style="width: 300px; height: 300px" loop autoplay></lottie-player>
+                  </div>
+    
+                  <div class="lottieFlame2">
+                    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                    <lottie-player class="flamePlayer flame2Player" src="https://assets5.lottiefiles.com/packages/lf20_uletvhke.json" background="transparent" speed="1.5" style="width: 300px; height: 300px" loop autoplay></lottie-player>
+                  </div>
+                </div>
+
                 <svg class="crewSVG" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background: new 0 0 512 512" xml:space="preserve">
                   <defs>
                     <radialGradient id="crewSVGgradient" cx="0.5" cy="0.5" r="0.4" fx="0.75" fy="0.75" spreadMethod="reflect">
@@ -296,22 +306,63 @@
                       <path
                         class="crewSVGpath"
                         d="M336.496,307.984c-0.666-0.316-1.357-0.538-2.048-0.674c20.595-182.329-41.029-271.982-72.259-304.774
-                        c-3.226-3.38-9.133-3.38-12.359,0c-31.239,32.792-92.871,122.446-72.276,304.774c-0.691,0.137-1.383,0.358-2.048,0.674
-                        c-66.788,31.853-47.797,97.651-29.446,161.281c2.68,9.278,5.369,18.598,7.801,27.833c0.905,3.44,3.841,5.949,7.374,6.316
-                        c3.585,0.367,6.922-1.494,8.518-4.669l29.37-58.739l-11.258,61.931c-0.743,4.08,1.562,8.108,5.454,9.534
-                        c0.964,0.358,1.955,0.529,2.945,0.529c2.979,0,5.83-1.562,7.391-4.268c4.191-7.246,16.114-21.953,25.734-21.568
-                        c6.265,0.316,12.956,7.699,18.837,20.8c1.383,3.064,4.43,5.036,7.784,5.036c3.354,0,6.401-1.972,7.784-5.036
-                        c5.881-13.084,12.564-20.467,18.829-20.8c10.268-0.555,22.388,15.807,25.759,21.577c2.074,3.576,6.435,5.147,10.328,3.721
-                        c3.892-1.434,6.188-5.454,5.445-9.525l-11.258-61.931l29.37,58.739c1.596,3.184,4.976,5.036,8.518,4.669
-                        c3.534-0.367,6.47-2.876,7.374-6.316c2.433-9.244,5.121-18.555,7.801-27.833C384.293,405.635,403.275,339.837,336.496,307.984z
-                         M256,341.296c-18.829,0-34.141-15.312-34.141-34.141s15.312-34.141,34.141-34.141s34.141,15.312,34.141,34.141
-                        S274.82,341.296,256,341.296z M256,255.945c-18.829,0-34.141-15.312-34.141-34.141s15.312-34.141,34.141-34.141
-                        s34.141,15.312,34.141,34.141S274.82,255.945,256,255.945z M256,170.593c-18.829,0-34.141-15.312-34.141-34.141
-                        s15.312-34.141,34.141-34.141s34.141,15.312,34.141,34.141S274.82,170.593,256,170.593z"
+                c-3.226-3.38-9.133-3.38-12.359,0c-31.239,32.792-92.871,122.446-72.276,304.774c-0.691,0.137-1.383,0.358-2.048,0.674
+                c-66.788,31.853-47.797,97.651-29.446,161.281c2.68,9.278,5.369,18.598,7.801,27.833c0.905,3.44,3.841,5.949,7.374,6.316
+                c3.585,0.367,6.922-1.494,8.518-4.669l29.37-58.739l-11.258,61.931c-0.743,4.08,1.562,8.108,5.454,9.534
+                c0.964,0.358,1.955,0.529,2.945,0.529c2.979,0,5.83-1.562,7.391-4.268c4.191-7.246,16.114-21.953,25.734-21.568
+                c6.265,0.316,12.956,7.699,18.837,20.8c1.383,3.064,4.43,5.036,7.784,5.036c3.354,0,6.401-1.972,7.784-5.036
+                c5.881-13.084,12.564-20.467,18.829-20.8c10.268-0.555,22.388,15.807,25.759,21.577c2.074,3.576,6.435,5.147,10.328,3.721
+                c3.892-1.434,6.188-5.454,5.445-9.525l-11.258-61.931l29.37,58.739c1.596,3.184,4.976,5.036,8.518,4.669
+                c3.534-0.367,6.47-2.876,7.374-6.316c2.433-9.244,5.121-18.555,7.801-27.833C384.293,405.635,403.275,339.837,336.496,307.984z
+                 M256,341.296c-18.829,0-34.141-15.312-34.141-34.141s15.312-34.141,34.141-34.141s34.141,15.312,34.141,34.141
+                S274.82,341.296,256,341.296z M256,255.945c-18.829,0-34.141-15.312-34.141-34.141s15.312-34.141,34.141-34.141
+                s34.141,15.312,34.141,34.141S274.82,255.945,256,255.945z M256,170.593c-18.829,0-34.141-15.312-34.141-34.141
+                s15.312-34.141,34.141-34.141s34.141,15.312,34.141,34.141S274.82,170.593,256,170.593z"
                       />
                     </g>
                   </g>
                 </svg>
+
+                <!-- <div class="SVGflames">
+                  <svg class="flame1SVG">
+                    <g>
+                      <path
+                        class="flame1SVGpath"
+                        style="fill: #ffb446"
+                        d="M97.103,353.103C97.103,440.86,168.244,512,256,512l0,0c87.756,0,158.897-71.14,158.897-158.897
+                c0-88.276-44.138-158.897-14.524-220.69c0,0-47.27,8.828-73.752,79.448c0,0-88.276-88.276-51.394-211.862
+                c0,0-89.847,35.31-80.451,150.069c8.058,98.406-9.396,114.759-9.396,114.759c0-79.448-62.115-114.759-62.115-114.759
+                C141.241,247.172,97.103,273.655,97.103,353.103z"
+                      />
+                      <path
+                        class="flame1SVGpath"
+                        style="fill: #ffdc64"
+                        d="M370.696,390.734c0,66.093-51.033,122.516-117.114,121.241
+                c-62.188-1.198-108.457-48.514-103.512-110.321c2.207-27.586,23.172-72.276,57.379-117.517l22.805,13.793
+                C229.517,242.023,256,167.724,256,167.724C273.396,246.007,370.696,266.298,370.696,390.734z"
+                      />
+                      <path
+                        class="flame1SVGpath"
+                        style="fill: #ffffff"
+                        d="M211.862,335.448c-8.828,52.966-26.483,72.249-26.483,105.931C185.379,476.69,216.998,512,256,512
+                l0,0c39.284,0,70.729-32.097,70.62-71.381c-0.295-105.508-61.792-158.136-61.792-158.136c8.828,52.966-17.655,79.448-17.655,79.448
+                C236.141,345.385,211.862,335.448,211.862,335.448z"
+                      />
+                    </g>
+                  </svg>
+  
+                  <svg class="flame2SVG">
+                    <path class="flame2SVGpath" style="fill: #ffb446" d="M57 26.2s-3 2.8-8.1 6.1C47.5 24.2 43.6 14.2 36 2c0 0-2.5 13.1-10.8 25.4c-3.6-5.6-5.2-10-5.2-10C-6 43.5 15.6 62 29.2 62c17.4 0 32.7-8.4 27.8-35.8" fill="#ff9d33"></path>
+                    <path class="flame2SVGpath" style="fill: #ffdc64" d="M46.7 49.4c1.5-3.3 2.6-7.6 2.8-13c0 0-2.1 1.8-5.7 4.1c-1-5.4-3.7-12-9-20.2c0 0-1.7 8.7-7.5 17c-2.5-3.7-3.6-6.7-3.6-6.7c-4.3 6.8-6 12.2-6.1 16.5c-2.4-.9-3.9-1.6-3.9-1.6c4.1 12.2 12.6 14.9 16.4 14.9c6.8 0 13.7-2 20.5-11.7c0-.1-1.5.3-3.9.7" fill="#ffce31"></path>
+                    <path class="flame2SVGpath" style="fill: #ffffff" d="M21.9 43.9s2.8 3.8 4.9 2.9c0 0 4-6.3 9.8-9.8c0 0-1.2 9.6.2 11.3c1.8 2.3 6.7-2.5 6.7-2.5c0 5.7-6.2 12.8-11.8 12.8c-5.4 0-13.2-6.2-9.8-14.7" fill="#ffdf85"></path>
+                    <g fill="#ff9d33">
+                      <path class="flame2SVGpath" style="fill: #ffdc64" d="M49.8 18.1c2.1-3 3.5-6.2 3.5-6.2c3.5 5.8 1.4 9.3-.1 10.4c-2.1 1.6-5.8-.7-3.4-4.2"></path>
+                      <path class="flame2SVGpath" style="fill: #ffdc64" d="M11.6 17.1c-2.1-3.5-2.3-7.9-2.3-7.9c-5 7.5-3.1 11.7-1.4 12.9c2.2 1.7 6-.9 3.7-5"></path>
+                      <path class="flame2SVGpath" style="fill: #ffb446" d="M23.2 9.3c.3-2.4-.7-4.8-.7-4.8c4.7 3.1 4.7 5.7 4.1 6.8c-.9 1.3-3.7.7-3.4-2"></path>
+                    </g>
+                  </svg>
+                </div> -->
+
                 <div class="row">
                   <div class="col-4">
                     <a href="https://en.wikipedia.org/wiki/Sergey_Prokopyev_(cosmonaut)" target="_blank" class="crewName crewInside nameSerg">Sergey Prokopyev</a>
@@ -339,9 +390,21 @@
                 </div>
               </div>
 
-              <!-- Tab content 2 -->
-              <div id="Backup" class="tabcontent tabcontentDark">
-                <svg class="crewSVG" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background: new 0 0 512 512" xml:space="preserve">
+              <div id="backup" class="testTab tabcontentDark">
+
+                <div class="flame">
+                  <div class="lottieFlame">
+                    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                    <lottie-player class="flamePlayer flame1Player" src="https://assets5.lottiefiles.com/packages/lf20_uletvhke.json" background="transparent" speed="1" style="width: 300px; height: 300px" loop autoplay></lottie-player>
+                  </div>
+    
+                  <div class="lottieFlame2">
+                    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                    <lottie-player class="flamePlayer flame2Player" src="https://assets5.lottiefiles.com/packages/lf20_uletvhke.json" background="transparent" speed="1.5" style="width: 300px; height: 300px" loop autoplay></lottie-player>
+                  </div>
+                </div>
+
+                <svg class="crewSVG backupSVG" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background: new 0 0 512 512" xml:space="preserve">
                   <defs>
                     <radialGradient id="crewBackupSVGgradient" cx="0.5" cy="0.5" r="0.4" fx="0.75" fy="0.75" spreadMethod="reflect">
                       <stop offset="0%" stop-color="#1a1a1a" />
@@ -354,18 +417,18 @@
                       <path
                         class="crewBackupSVGpath"
                         d="M336.496,307.984c-0.666-0.316-1.357-0.538-2.048-0.674c20.595-182.329-41.029-271.982-72.259-304.774
-                        c-3.226-3.38-9.133-3.38-12.359,0c-31.239,32.792-92.871,122.446-72.276,304.774c-0.691,0.137-1.383,0.358-2.048,0.674
-                        c-66.788,31.853-47.797,97.651-29.446,161.281c2.68,9.278,5.369,18.598,7.801,27.833c0.905,3.44,3.841,5.949,7.374,6.316
-                        c3.585,0.367,6.922-1.494,8.518-4.669l29.37-58.739l-11.258,61.931c-0.743,4.08,1.562,8.108,5.454,9.534
-                        c0.964,0.358,1.955,0.529,2.945,0.529c2.979,0,5.83-1.562,7.391-4.268c4.191-7.246,16.114-21.953,25.734-21.568
-                        c6.265,0.316,12.956,7.699,18.837,20.8c1.383,3.064,4.43,5.036,7.784,5.036c3.354,0,6.401-1.972,7.784-5.036
-                        c5.881-13.084,12.564-20.467,18.829-20.8c10.268-0.555,22.388,15.807,25.759,21.577c2.074,3.576,6.435,5.147,10.328,3.721
-                        c3.892-1.434,6.188-5.454,5.445-9.525l-11.258-61.931l29.37,58.739c1.596,3.184,4.976,5.036,8.518,4.669
-                        c3.534-0.367,6.47-2.876,7.374-6.316c2.433-9.244,5.121-18.555,7.801-27.833C384.293,405.635,403.275,339.837,336.496,307.984z
-                         M256,341.296c-18.829,0-34.141-15.312-34.141-34.141s15.312-34.141,34.141-34.141s34.141,15.312,34.141,34.141
-                        S274.82,341.296,256,341.296z M256,255.945c-18.829,0-34.141-15.312-34.141-34.141s15.312-34.141,34.141-34.141
-                        s34.141,15.312,34.141,34.141S274.82,255.945,256,255.945z M256,170.593c-18.829,0-34.141-15.312-34.141-34.141
-                        s15.312-34.141,34.141-34.141s34.141,15.312,34.141,34.141S274.82,170.593,256,170.593z"
+                c-3.226-3.38-9.133-3.38-12.359,0c-31.239,32.792-92.871,122.446-72.276,304.774c-0.691,0.137-1.383,0.358-2.048,0.674
+                c-66.788,31.853-47.797,97.651-29.446,161.281c2.68,9.278,5.369,18.598,7.801,27.833c0.905,3.44,3.841,5.949,7.374,6.316
+                c3.585,0.367,6.922-1.494,8.518-4.669l29.37-58.739l-11.258,61.931c-0.743,4.08,1.562,8.108,5.454,9.534
+                c0.964,0.358,1.955,0.529,2.945,0.529c2.979,0,5.83-1.562,7.391-4.268c4.191-7.246,16.114-21.953,25.734-21.568
+                c6.265,0.316,12.956,7.699,18.837,20.8c1.383,3.064,4.43,5.036,7.784,5.036c3.354,0,6.401-1.972,7.784-5.036
+                c5.881-13.084,12.564-20.467,18.829-20.8c10.268-0.555,22.388,15.807,25.759,21.577c2.074,3.576,6.435,5.147,10.328,3.721
+                c3.892-1.434,6.188-5.454,5.445-9.525l-11.258-61.931l29.37,58.739c1.596,3.184,4.976,5.036,8.518,4.669
+                c3.534-0.367,6.47-2.876,7.374-6.316c2.433-9.244,5.121-18.555,7.801-27.833C384.293,405.635,403.275,339.837,336.496,307.984z
+                 M256,341.296c-18.829,0-34.141-15.312-34.141-34.141s15.312-34.141,34.141-34.141s34.141,15.312,34.141,34.141
+                S274.82,341.296,256,341.296z M256,255.945c-18.829,0-34.141-15.312-34.141-34.141s15.312-34.141,34.141-34.141
+                s34.141,15.312,34.141,34.141S274.82,255.945,256,255.945z M256,170.593c-18.829,0-34.141-15.312-34.141-34.141
+                s15.312-34.141,34.141-34.141s34.141,15.312,34.141,34.141S274.82,170.593,256,170.593z"
                       />
                     </g>
                   </g>
@@ -420,10 +483,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js" type="text/javascript"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js" type="text/javascript"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/MotionPathPlugin.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/Draggable.min.js"></script>
     <script src="JS/ScrambleTextPlugin.min.js" type="text/javascript"></script>
     <script src="JS/GSDevTools.min.js" type="text/javascript"></script>
     <script src="JS/DrawSVGPlugin.min.js" type="text/javascript"></script>
     <script src="JS/MotionPathHelper.min.js" type="text/javascript"></script>
+    <script src="JS/MorphSVGPlugin.min.js" type="text/javascript"></script>
     <script src="JS/Custom.js" type="text/javascript"></script>
   </body>
 </html>

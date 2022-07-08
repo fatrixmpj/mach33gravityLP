@@ -1,4 +1,6 @@
 
+// gsap.registerPlugin(MorphSVGPlugin, Draggable);
+
 var getLocalDarkVar = localStorage.getItem('dark');
 if(getLocalDarkVar == "true") {
   console.log("dark Theme");
@@ -23,6 +25,11 @@ function toggleWhiteMode() {
 
     var modeMoon = document.getElementById("btnMoon");
     modeMoon.classList.remove("hidden");
+
+    // Body COLOR
+    var whiteBody = document.getElementById("mainBody");
+    whiteBody.classList.add("whiteMode");
+    whiteBody.classList.remove("darkMode");
 
     // NAV COLOR
     var whiteNav = document.getElementById("mainNav");
@@ -117,29 +124,6 @@ function toggleWhiteMode() {
 
     whiterText[7].classList.add("ttLighter");
     whiterText[7].classList.remove("ttDarker");
-
-    // Tab COLOR
-    var whiteTab = document.getElementById("tab");
-    whiteTab.classList.add("tabLight");
-    whiteTab.classList.remove("tabDark");
-
-    // Tabcontent main COLOR
-    var whiteTabcontent = document.getElementById("Main");
-    whiteTabcontent.classList.add("tabcontentLight");
-    whiteTabcontent.classList.remove("tabcontentDark");
-
-    // Tabcontent backup COLOR
-    var whiteTabcontentBack = document.getElementById("Backup");
-    whiteTabcontentBack.classList.add("tabcontentLight");
-    whiteTabcontentBack.classList.remove("tabcontentDark");
-
-    // Tablinks COLOR
-    var whiteTablinks = document.getElementsByClassName("tablinks");
-    whiteTablinks[0].classList.add("tablinksWhite");
-    whiteTablinks[0].classList.remove("tablinksDark");
-
-    whiteTablinks[1].classList.add("tablinksWhite");
-    whiteTablinks[1].classList.remove("tablinksDark");
   } else {
     toggleDarkMode();
   }
@@ -164,6 +148,11 @@ function toggleDarkMode() {
 
     var modeMoon = document.getElementById("btnMoon");
     modeMoon.classList.add("hidden");
+
+    // Body COLOR
+    var darkBody = document.getElementById("mainBody");
+    darkBody.classList.add("darkMode");
+    darkBody.classList.remove("whiteMode");
 
     // NAV COLOR
     var darkNav = document.getElementById("mainNav");
@@ -258,64 +247,16 @@ function toggleDarkMode() {
 
     darkerText[7].classList.add("ttDarker");
     darkerText[7].classList.remove("ttLighter");
-
-    // Tab COLOR
-    var darkTab = document.getElementById("tab");
-    darkTab.classList.remove("tabLight");
-    darkTab.classList.add("tabDark");
-
-    // Tabcontent main COLOR
-    var darkTabcontent = document.getElementById("Main");
-    darkTabcontent.classList.add("tabcontentDark");
-    darkTabcontent.classList.remove("tabcontentLight");
-
-    // Tabcontent backup COLOR
-    var darkTabcontentBack = document.getElementById("Backup");
-    darkTabcontentBack.classList.add("tabcontentDark");
-    darkTabcontentBack.classList.remove("tabcontentLight");
-
-    // Tablinks COLOR
-    var darkTablinks = document.getElementsByClassName("tablinks");
-    darkTablinks[0].classList.add("tablinksDark");
-    darkTablinks[0].classList.remove("tablinksWhite");
-
-    darkTablinks[1].classList.add("tablinksDark");
-    darkTablinks[1].classList.remove("tablinksWhite");
     } else {
     toggleWhiteMode();
   }
 }
 
-// TABS
-
-function openCity(evt, cityName) {
-  // Declare all variables
-  var i, tabcontent, tablinks;
-
-  // Get all elements with class="tabcontent" and hide them
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-
-  // Get all elements with class="tablinks" and remove the class "active"
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
-
-  // Show the current tab, and add an "active" class to the button that opened the tab
-  document.getElementById(cityName).style.display = "block";
-  evt.currentTarget.className += " active";
-}
-
-// Get the element with id="defaultOpen" and click on it
-document.getElementById("defaultOpen").click();
-
 // *******************
 // * GSAP ANIMATIONS *
 // *******************
 
+document.addEventListener('DOMContentLoaded', (event) => {
 // Intro
 let introTl = gsap.timeline({
   defaults: {
@@ -324,17 +265,20 @@ let introTl = gsap.timeline({
   }
 });
 
-introTl.set(".navImg", {
+introTl.set(".body", {
+  opacity: 1
+})
+.set(".navImg", {
   xPercent: 45,
   width: "50%"
 })
 .set(".nav-link", {
   opacity: 0
 }, 0)
-// .set(".mainNav", {
-//   backgroundColor: "transparent",
-//   boxShadow: "none"
-// }, 0)
+.set(".mainNav", {
+  backgroundColor: "transparent",
+  boxShadow: "none"
+}, 0)
 .set(".modeToggle", {
   opacity: 0
 }, 0)
@@ -348,6 +292,11 @@ introTl.set(".navImg", {
   width: "2vw",
   delay: 1,
   onComplete: textScramble
+})
+.to(".mainNav", {
+  backgroundColor: ""
+})
+
 })
 
 function textScramble() {
@@ -433,14 +382,13 @@ function gsapFunc() {
 
 // Arrow Bounce
 let arrowTl = gsap.timeline({
-    repeat: -1
+    repeat: -1,
+    yoyo: true
 });
 
 arrowTl.to(".arrow", {
     yPercent: -10
-}).to(".arrow", {
-    yPercent: 10
-}).repeat()
+})
 
 // ScrollTrigger
 gsap.defaults({ ease: "none", duration: 1 });
@@ -588,11 +536,6 @@ ScrollTrigger.create({
 
 }
 
-// MotionPathHelper.create(".rocketSVG")
-
-// GSDevTools.create({animation: introTl});
-
-
 // ***************************************
 // * The progress bar (scroll indicator) *
 // ***************************************
@@ -625,7 +568,7 @@ btn.onclick = function() {
   // modal.style.display = "block";
   gsap.to(".w3modal", {
     // duration: 3,
-    y: -300
+    y: "-32%"
   })
   gsap.to(".w3modal", {
     // duration: 3,
@@ -638,7 +581,7 @@ span.onclick = function() {
   // modal.style.display = "none";
   gsap.to(".w3modal", {
     // duration: 3,
-    y: 300
+    y: "32%"
   })
   gsap.to(".w3modal", {
     // duration: 3,
@@ -652,7 +595,7 @@ window.onclick = function(event) {
     // modal.style.display = "none";
     gsap.to(".w3modal", {
       // duration: 3,
-      y: 300
+      y: "32%"
     })
     gsap.to(".w3modal", {
       // duration: 3,
@@ -672,7 +615,7 @@ if(getLocalCookieVar == "true") {
 }else {
   console.log("no consent");
   gsap.to(".cookieModal", {
-    y: -100
+    y: -110
   })
   gsap.to(".cookieModal", {
     display: "block",
@@ -688,10 +631,70 @@ cookieBtn.onclick = function() {
 
   gsap.to(".cookieModal", {
     // duration: 3,
-    y: 100
+    y: 110
   })
   gsap.to(".cookieModal", {
     // duration: 3,
     display: "none",
   })
 }
+
+
+// FIXME Test Crew
+function mainCrew() {
+  console.log("main crew");
+
+  var mainBtn = document.getElementById("mainBtn");
+
+  var backupBtn = document.getElementById("backupBtn");
+
+  mainBtn.classList.add("hidden");
+  backupBtn.classList.remove("hidden");
+
+  var mainTl = gsap.timeline();
+
+  mainTl.to("#backup", {
+    x: -3000,
+    duration: 2
+  }, 0)
+  .to("#lottieFlame", {
+    x: -3000,
+    duration: 2
+  }, 0)
+  .to("#lottieFlame2", {
+    x: -3000,
+    duration: 2
+  }, 0)
+  .to("#main", {
+    x: 0,
+    duration: 2
+  }, 0)
+  .set("#backup", {
+    x: 3000
+  })
+};
+
+function backupCrew() {
+  console.log("backup crew");
+
+  var mainBtn = document.getElementById("mainBtn");
+
+  var backupBtn = document.getElementById("backupBtn");
+
+  backupBtn.classList.add("hidden");
+  mainBtn.classList.remove("hidden");
+
+  var backupTl = gsap.timeline();
+
+  backupTl.to("#main", {
+    x: -3000,
+    duration: 2
+  }, 0)
+  .to("#backup", {
+    x: 0,
+    duration: 2
+  }, 0)
+  .set("#main", {
+    x: 3000
+  })
+};
