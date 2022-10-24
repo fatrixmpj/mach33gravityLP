@@ -1,11 +1,10 @@
-
 // gsap.registerPlugin(MorphSVGPlugin, Draggable);
 
-var getLocalDarkVar = localStorage.getItem('dark');
-if(getLocalDarkVar == "true") {
+var getLocalDarkVar = localStorage.getItem("dark");
+if (getLocalDarkVar == "true") {
   console.log("dark Theme");
   toggleDarkMode();
-}else {
+} else {
   console.log("Light Theme");
   toggleWhiteMode();
 }
@@ -16,8 +15,8 @@ function toggleWhiteMode() {
   body.classList.toggle("whiteMode");
 
   if (document.body.classList.contains("whiteMode")) {
-		localStorage.removeItem('light', true);	
-    localStorage.setItem('dark',false);
+    localStorage.removeItem("light", true);
+    localStorage.setItem("dark", false);
 
     // ICONS
     var modeSun = document.getElementById("btnSun");
@@ -59,9 +58,14 @@ function toggleWhiteMode() {
     var whiteFooter = document.getElementById("footer");
     whiteFooter.classList.add("footer-light");
     whiteFooter.classList.remove("footer-dark");
-    
+
     // Modal COLOR
     var whiteModal = document.getElementById("modalMode");
+    whiteModal.classList.add("modalContentLight");
+    whiteModal.classList.remove("modalContentDark");
+
+    // Cookie Modal COLOR
+    var whiteModal = document.getElementById("cookieModalMode");
     whiteModal.classList.add("modalContentLight");
     whiteModal.classList.remove("modalContentDark");
 
@@ -130,17 +134,15 @@ function toggleWhiteMode() {
 }
 
 function toggleDarkMode() {
-
   var body = document.body;
   body.classList.toggle("darkMode");
 
   if (document.body.classList.contains("darkMode")) {
-		localStorage.removeItem('light', true);	
-    localStorage.setItem('dark',false);
+    localStorage.removeItem("light", true);
+    localStorage.setItem("dark", false);
 
-    
-    localStorage.setItem('dark',true);
-    localStorage.removeItem('light', false);	
+    localStorage.setItem("dark", true);
+    localStorage.removeItem("light", false);
 
     // ICONS
     var modeSun = document.getElementById("btnSun");
@@ -182,9 +184,14 @@ function toggleDarkMode() {
     var darkFooter = document.getElementById("footer");
     darkFooter.classList.add("footer-dark");
     darkFooter.classList.remove("footer-light");
-    
+
     // Modal COLOR
     var darkModal = document.getElementById("modalMode");
+    darkModal.classList.add("modalContentDark");
+    darkModal.classList.remove("modalContentLight");
+
+    // Modal COLOR
+    var darkModal = document.getElementById("cookieModalMode");
     darkModal.classList.add("modalContentDark");
     darkModal.classList.remove("modalContentLight");
 
@@ -247,7 +254,7 @@ function toggleDarkMode() {
 
     darkerText[7].classList.add("ttDarker");
     darkerText[7].classList.remove("ttLighter");
-    } else {
+  } else {
     toggleWhiteMode();
   }
 }
@@ -256,300 +263,425 @@ function toggleDarkMode() {
 // * GSAP ANIMATIONS *
 // *******************
 
-document.addEventListener('DOMContentLoaded', (event) => {
-// Intro
-let introTl = gsap.timeline({
-  defaults: {
-    duration: 3,
-    ease: "none"
-  }
+document.addEventListener("DOMContentLoaded", (event) => {
+  // Intro
+  let introTl = gsap.timeline({
+    defaults: {
+      duration: 3,
+      ease: "none",
+    },
+  });
+
+  introTl
+    .set(".body", {
+      opacity: 1,
+    })
+    .set(".navImg", {
+      xPercent: 45,
+      width: "50%",
+    })
+    .set(
+      ".nav-link",
+      {
+        opacity: 0,
+      },
+      0
+    )
+    .set(
+      ".mainNav",
+      {
+        backgroundColor: "transparent",
+        boxShadow: "none",
+      },
+      0
+    )
+    .set(
+      ".modeToggle",
+      {
+        opacity: 0,
+      },
+      0
+    )
+    .set(
+      ".section",
+      {
+        display: "none",
+      },
+      0
+    )
+    .to(".navImg", {
+      rotate: 360,
+      xPercent: 0,
+      yPercent: 0,
+      width: "2vw",
+      delay: 1,
+      onComplete: textScramble,
+    })
+    .to(".mainNav", {
+      backgroundColor: "",
+    });
 });
-
-introTl.set(".body", {
-  opacity: 1
-})
-.set(".navImg", {
-  xPercent: 45,
-  width: "50%"
-})
-.set(".nav-link", {
-  opacity: 0
-}, 0)
-.set(".mainNav", {
-  backgroundColor: "transparent",
-  boxShadow: "none"
-}, 0)
-.set(".modeToggle", {
-  opacity: 0
-}, 0)
-.set(".section", {
-  display: "none"
-}, 0)
-.to(".navImg", {
-  rotate: 360,
-  xPercent: 0,
-  yPercent: 0,
-  width: "2vw",
-  delay: 1,
-  onComplete: textScramble
-})
-.to(".mainNav", {
-  backgroundColor: ""
-})
-
-})
 
 function textScramble() {
-
   // Textscramble
-let textTl = gsap.timeline({
-  delay: 0,
-  duration: 5,
-  ease: "none"
-});
+  let textTl = gsap.timeline({
+    delay: 0,
+    duration: 5,
+    ease: "none",
+  });
 
-textTl
-.to(".nav-link", {
-  duration: 2,
-  opacity: 1,
-  scrambleText: {
-    text: "{original}",
-    chars: "upperAndLowerCase",
-    tweenLength: true
-  }
-}, 0)
-// .to(".mainNav", {
-//   backgroundColor: "#4d4d4d",
-//   boxShadow: "0 2px 10px 10px #262626"
-// }, 0)
-.to(".modeToggle", {
-  opacity: 1
-}, 0)
-.to(".descriptionP", {
-  duration: 3,
-  scrambleText: {
-    text: "Watch the Earth from space and learn about the mission of the rocket you own a piece of", 
-    chars: "upperAndLowerCase",
-    // revealDelay: 0.5,
-    tweenLength: true
-  }
-}, 0)
-.to(".descriptionH1", {
-  duration: 3,
-  scrambleText: {
-    text: "Gravity", 
-    chars: "upperAndLowerCase",
-    // revealDelay: 0.5,
-    tweenLength: true
-  }
-}, 0)
-.set(".descriptionH6", {
-  opacity: 1
-}, ">")
-.to(".descriptionH6", {
-  duration: 3,
-  scrambleText: {
-    text: "Mach 33", 
-    chars: "upperAndLowerCase",
-    // revealDelay: 0.5,
-    tweenLength: true
-  }
-}, ">")
-.to(".scroll-down", {
-  duration: 3,
-  scrambleText: {
-    text: "Scroll down", 
-    chars: "upperAndLowerCase",
-    // revealDelay: 0.5,
-    tweenLength: true
-  }
-}, "<")
-.set(".arrow", {
-  opacity: 1,
-  onComplete: setMain
-}, ">-=0.6");
-
+  textTl
+    .to(
+      ".nav-link",
+      {
+        duration: 2,
+        opacity: 1,
+        scrambleText: {
+          text: "{original}",
+          chars: "upperAndLowerCase",
+          tweenLength: true,
+        },
+      },
+      0
+    )
+    // .to(".mainNav", {
+    //   backgroundColor: "#4d4d4d",
+    //   boxShadow: "0 2px 10px 10px #262626"
+    // }, 0)
+    .to(
+      ".modeToggle",
+      {
+        opacity: 1,
+      },
+      0
+    )
+    .to(
+      ".descriptionP",
+      {
+        duration: 3,
+        scrambleText: {
+          text: "Watch the Earth from space and learn about the mission of the rocket you own a piece of",
+          chars: "upperAndLowerCase",
+          // revealDelay: 0.5,
+          tweenLength: true,
+        },
+      },
+      0
+    )
+    .to(
+      ".descriptionH1",
+      {
+        duration: 3,
+        scrambleText: {
+          text: "Gravity",
+          chars: "upperAndLowerCase",
+          // revealDelay: 0.5,
+          tweenLength: true,
+        },
+      },
+      0
+    )
+    .set(
+      ".descriptionH6",
+      {
+        opacity: 1,
+      },
+      ">"
+    )
+    .to(
+      ".descriptionH6",
+      {
+        duration: 3,
+        scrambleText: {
+          text: "Mach 33",
+          chars: "upperAndLowerCase",
+          // revealDelay: 0.5,
+          tweenLength: true,
+        },
+      },
+      ">"
+    )
+    .to(
+      ".scroll-down",
+      {
+        duration: 3,
+        scrambleText: {
+          text: "Scroll down",
+          chars: "upperAndLowerCase",
+          // revealDelay: 0.5,
+          tweenLength: true,
+        },
+      },
+      "<"
+    )
+    .set(
+      ".arrow",
+      {
+        opacity: 1,
+        onComplete: setMain,
+      },
+      ">-=0.6"
+    );
 }
 
 function setMain() {
   gsap.set(".section", {
     display: "block",
-    onComplete: gsapFunc
+    onComplete: gsapFunc,
   });
 }
 
 function gsapFunc() {
-
-// Arrow Bounce
-let arrowTl = gsap.timeline({
+  // Arrow Bounce
+  let arrowTl = gsap.timeline({
     repeat: -1,
-    yoyo: true
-});
+    yoyo: true,
+  });
 
-arrowTl.to(".arrow", {
-    yPercent: -10
-})
+  arrowTl.to(".arrow", {
+    yPercent: -10,
+  });
 
-// ScrollTrigger
-gsap.defaults({ ease: "none", duration: 1 });
+  // ScrollTrigger
+  gsap.defaults({ ease: "none", duration: 1 });
 
-let scrollTl = gsap.timeline();
+  let scrollTl = gsap.timeline();
 
-scrollTl.to(".scroll-down", {
-    yPercent: -1500,
-  })
-  .to(".backgroundDiv", {
-    yPercent: -100,
-  }, "<")
-  .to(".fa-arrow-down", {
-    yPercent: -1500,
-  }, "<")
+  scrollTl
+    .to(".scroll-down", {
+      yPercent: -1500,
+    })
+    .to(
+      ".backgroundDiv",
+      {
+        yPercent: -100,
+      },
+      "<"
+    )
+    .to(
+      ".fa-arrow-down",
+      {
+        yPercent: -1500,
+      },
+      "<"
+    )
 
-  .from(
-    ".section1",
-    {
+    .from(
+      ".section1",
+      {
+        opacity: 0,
+      },
+      "<"
+    )
+    .to(
+      ".nav-link1",
+      {
+        color: "#278bd8",
+      },
+      "<-=0.5"
+    )
+
+    .from(".section1", { duration: 4 })
+
+    .from(".section1", {
+      opacity: 1,
+    })
+    .to(
+      ".nav-link1",
+      {
+        color: "#d87427",
+      },
+      "<-=0.5"
+    )
+    .from(".section2", {
       opacity: 0,
-    },
-    "<"
-  )
-  .to(".nav-link1", {
-    color: "#278bd8"
-  }, "<-=0.5")
-  
-  .from(".section1", { duration: 2 })
+    })
+    .to(
+      ".nav-link2",
+      {
+        color: "#278bd8",
+      },
+      "<-=0.5"
+    )
 
-  .from(".section1", {
-    opacity: 1,
-  })
-  .to(".nav-link1", {
-    color: "#d87427"
-  }, "<-=0.5")
-  .from(".section2", {
-    opacity: 0,
-  })
-  .to(".nav-link2", {
-    color: "#278bd8"
-  }, "<-=0.5")
+    .from(".section1", { duration: 4 })
 
-  .from(".section1", { duration: 2 })
+    .from(".section2", {
+      opacity: 1,
+    })
+    .to(
+      ".nav-link2",
+      {
+        color: "#d87427",
+      },
+      "<-=0.5"
+    )
+    .from(".section3", {
+      opacity: 0,
+    })
+    .to(
+      ".nav-link3",
+      {
+        color: "#278bd8",
+      },
+      "<-=0.5"
+    )
 
-  .from(".section2", {
-    opacity: 1,
-  })
-  .to(".nav-link2", {
-    color: "#d87427"
-  }, "<-=0.5")
-  .from(".section3", {
-    opacity: 0,
-  })
-  .to(".nav-link3", {
-    color: "#278bd8"
-  }, "<-=0.5")
+    .from(".section1", { duration: 4 })
 
-  .from(".section1", { duration: 2 })
+    .from(".section3", {
+      opacity: 1,
+    })
+    .to(
+      ".nav-link3",
+      {
+        color: "#d87427",
+      },
+      "<-=0.5"
+    )
+    .from(".section4", {
+      opacity: 0,
+    })
+    .to(
+      ".nav-link4",
+      {
+        color: "#278bd8",
+      },
+      "<-=0.5"
+    )
 
-  .from(".section3", {
-    opacity: 1,
-  })
-  .to(".nav-link3", {
-    color: "#d87427"
-  }, "<-=0.5")
-  .from(".section4", {
-    opacity: 0,
-  })
-  .to(".nav-link4", {
-    color: "#278bd8"
-  }, "<-=0.5")
+    .from(".section1", { duration: 4 });
 
-  .from(".section1", { duration: 2 });
+  ScrollTrigger.create({
+    animation: scrollTl,
+    trigger: ".main",
+    start: "top top",
+    end: "+=10000",
+    scrub: true,
+    pin: ".main",
+    anticipatePin: 1,
+    // markers: true,
+  });
 
-ScrollTrigger.create({
-  animation: scrollTl,
-  trigger: ".main",
-  start: "top top",
-  end: "+=10000",
-  scrub: true,
-  pin: ".main",
-  anticipatePin: 1,
-  // markers: true,
-});
+  // Watch Facts
+  let watchTextTl = gsap.timeline();
 
-// Watch Facts 
-let watchTextTl = gsap.timeline();
+  watchTextTl
+    .from(".watchText", {
+      xPercent: 10,
+    })
+    .from(
+      ".watchImgContainer",
+      {
+        xPercent: 10,
+        yPercent: 10,
+      },
+      "0"
+    )
+    .from(
+      ".watchLi",
+      {
+        xPercent: 10,
+      },
+      "0"
+    );
 
-watchTextTl.from(".watchText", {
-  xPercent: 10
-})
-.from(".watchImgContainer", {
-  xPercent: -10
-}, "0")
-.from(".watchLi", {
-  xPercent: 10
-}, "0")
-.to(".arrowPath", {
-  // duration: 4,
-  drawSVG: "100%"
-}, 0.5)
-.set(".arrowMarker", {
-  opacity: 1
-}, 1.1);
+  ScrollTrigger.create({
+    animation: watchTextTl,
+    trigger: ".watchFacts",
+    start: "240% top",
+    end: "800%",
+    scrub: true,
+    // markers: true,
+  });
 
-ScrollTrigger.create({
-  animation: watchTextTl,
-  trigger: ".watchFacts",
-  start: "240% top",
-  end: "600%",
-  scrub: true,
-  // markers: true,
-});
+  // Watch Facts DrawSVG
+  let watchSvgTl = gsap.timeline();
 
-// Rocket Facts 
-let rocketTextTl = gsap.timeline();
+  watchSvgTl
+    .to(".arrowPath", {
+      // duration: 4,
+      drawSVG: "100%",
+    })
+    .set(
+      ".arrowMarker",
+      {
+        opacity: 1,
+      }, 0.5);
 
-rocketTextTl.from(".imageMission", {
-  xPercent: 10
-})
-.from(".imageCrew", {
-  xPercent: -10
-}, "0")
-.from(".imagePatch", {
-  xPercent: 10
-}, "0")
-.from(".rocketLi", {
-  xPercent: -10
-}, "0")
-.from(".factPtext", {
-  xPercent: -10
-}, "0")
-.from("#myModalBtn", {
-  xPercent: -10
-}, 0);
+  ScrollTrigger.create({
+    animation: watchSvgTl,
+    trigger: ".watchFacts",
+    start: "240% top",
+    end: "600%",
+    scrub: true,
+    markers: true,
+  });
 
-ScrollTrigger.create({
-  animation: rocketTextTl,
-  trigger: ".facts",
-  start: "550% top",
-  end: "900%",
-  scrub: true,
-  // markers: true,
-});
+  // Rocket Facts
+  let rocketTextTl = gsap.timeline();
 
+  rocketTextTl
+    .from(".imageMission", {
+      xPercent: 10,
+    })
+    .from(
+      ".imageCrew",
+      {
+        xPercent: -10,
+      },
+      "0"
+    )
+    .from(
+      ".imagePatch",
+      {
+        xPercent: 10,
+      },
+      "0"
+    )
+    .from(
+      ".rocketLi",
+      {
+        xPercent: -10,
+      },
+      "0"
+    )
+    .from(
+      ".factPtext",
+      {
+        xPercent: -10,
+      },
+      "0"
+    )
+    .from(
+      "#myModalBtn",
+      {
+        xPercent: -10,
+      },
+      0
+    );
+
+  ScrollTrigger.create({
+    animation: rocketTextTl,
+    trigger: ".facts",
+    start: "550% top",
+    end: "900%",
+    scrub: true,
+    // markers: true,
+  });
 }
 
 // ***************************************
 // * The progress bar (scroll indicator) *
 // ***************************************
 const animateProgressBar = () => {
-
   var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
   var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
   var scrolled = (winScroll / height) * 100;
   document.getElementById("progress-bar").style.width = scrolled + "%";
+};
 
-}
-
-window.addEventListener('scroll', animateProgressBar);
-
+window.addEventListener("scroll", animateProgressBar);
 
 // *********
 // * Modal *
@@ -563,82 +695,79 @@ var btn = document.getElementById("myModalBtn");
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
-// When the user clicks the button, open the modal 
-btn.onclick = function() {
+// When the user clicks the button, open the modal
+btn.onclick = function () {
   // modal.style.display = "block";
   gsap.to(".w3modal", {
     // duration: 3,
-    y: "-32%"
-  })
+    y: "-32%",
+  });
   gsap.to(".w3modal", {
     // duration: 3,
     display: "block",
-  })
-}
+  });
+};
 
 // When the user clicks on <span> (x), close the modal
-span.onclick = function() {
+span.onclick = function () {
   // modal.style.display = "none";
   gsap.to(".w3modal", {
     // duration: 3,
-    y: "32%"
-  })
+    y: "32%",
+  });
   gsap.to(".w3modal", {
     // duration: 3,
     display: "none",
-  })
-}
+  });
+};
 
 // When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
+window.onclick = function (event) {
   if (event.target == modal) {
     // modal.style.display = "none";
     gsap.to(".w3modal", {
       // duration: 3,
-      y: "32%"
-    })
+      y: "32%",
+    });
     gsap.to(".w3modal", {
       // duration: 3,
       display: "none",
-    })
+    });
   }
-}
-
+};
 
 // ****************
 // * Cookie Modal *
 // ****************
-var getLocalCookieVar = localStorage.getItem('cookie');
-if(getLocalCookieVar == "true") {
+var getLocalCookieVar = localStorage.getItem("cookie");
+if (getLocalCookieVar == "true") {
   console.log("consent");
-
-}else {
+} else {
   console.log("no consent");
   gsap.to(".cookieModal", {
-    y: -110
-  })
+    y: -110,
+  });
   gsap.to(".cookieModal", {
     display: "block",
-  })
+  });
 }
 
 // Get the button that opens the modal
 var cookieBtn = document.getElementById("cookieModalBtn");
 
-// When the user clicks the button to accept 
-cookieBtn.onclick = function() {
-  localStorage.setItem('cookie',true);
+// When the user clicks the button to accept
+cookieBtn.onclick = function () {
+  localStorage.setItem("cookie", true);
 
   gsap.to(".cookieModal", {
     // duration: 3,
-    y: 110
-  })
+    y: 110,
+  });
   gsap.to(".cookieModal", {
     // duration: 3,
     display: "none",
-  })
-}
-
+  });
+};
 
 // FIXME Test Crew
 function mainCrew() {
@@ -653,26 +782,43 @@ function mainCrew() {
 
   var mainTl = gsap.timeline();
 
-  mainTl.to("#backup", {
-    x: -3000,
-    duration: 2
-  }, 0)
-  .to("#lottieFlame", {
-    x: -3000,
-    duration: 2
-  }, 0)
-  .to("#lottieFlame2", {
-    x: -3000,
-    duration: 2
-  }, 0)
-  .to("#main", {
-    x: 0,
-    duration: 2
-  }, 0)
-  .set("#backup", {
-    x: 3000
-  })
-};
+  mainTl
+    .to(
+      "#backup",
+      {
+        x: -3000,
+        duration: 2,
+      },
+      0
+    )
+    .to(
+      "#lottieFlame",
+      {
+        x: -3000,
+        duration: 2,
+      },
+      0
+    )
+    .to(
+      "#lottieFlame2",
+      {
+        x: -3000,
+        duration: 2,
+      },
+      0
+    )
+    .to(
+      "#main",
+      {
+        x: 0,
+        duration: 2,
+      },
+      0
+    )
+    .set("#backup", {
+      x: 3000,
+    });
+}
 
 function backupCrew() {
   console.log("backup crew");
@@ -686,15 +832,24 @@ function backupCrew() {
 
   var backupTl = gsap.timeline();
 
-  backupTl.to("#main", {
-    x: -3000,
-    duration: 2
-  }, 0)
-  .to("#backup", {
-    x: 0,
-    duration: 2
-  }, 0)
-  .set("#main", {
-    x: 3000
-  })
-};
+  backupTl
+    .to(
+      "#main",
+      {
+        x: -3000,
+        duration: 2,
+      },
+      0
+    )
+    .to(
+      "#backup",
+      {
+        x: 0,
+        duration: 2,
+      },
+      0
+    )
+    .set("#main", {
+      x: 3000,
+    });
+}
